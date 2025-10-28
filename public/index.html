@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victor | Analyka</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Add these fonts for Jack & Rose look -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-background">
+    <img src="img/page20.jpg" alt="Background Left" class="bg-left">
+    <img src="img/page20.jpg" alt="Background Right" class="bg-right">
+  </div>
+
+  <!-- ===== Updated Glassy Sticky Navbar ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Left Links -->
+      <ul class="nav-links left-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="logo">Victor<span>&</span>Analyka</div>
+
+      <!-- Right Links -->
+      <ul class="nav-links right-links">
+        <li><a href="#wishes">Wishes</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+      <button id="darkModeToggle">🌙</button>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger" aria-expanded="false" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Vertical Heart Divider Line ===== -->
+  <div class="vertical-timeline">
+    <div class="diamond"></div>
+    <div class="diamond"></div>
+    <div class="diamond"></div>
+    <div class="diamond"></div>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero-section">
+    <div class="slider">
+      <div class="slide active"><img src="img/page1.jpg"Slide 1"></div>
+      <div class="slide"><img src="img/page2.jpg" alt="Slide 2"></div>
+      <div class="slide"><img src="img/page3.jpg" alt="Slide 3"></div>
+
+      <div class="dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h1>Welcome to MySite</h1>
+      <p>Your story begins here.</p>
+    </div>
+  </section>
+
+  <!-- ===== STORY SECTION ===== -->
+  <section id="story" class="section story-section">
+    <h2>Our Love Story</h2>
+    <p class="story-intro">Every chapter tells a piece of our journey — filled with laughter, adventures, and dreams.</p>
+
+    <div class="story-timeline">
+      <div class="story-item left">
+        <div class="story-content">
+          <h3>How We Met</h3>
+          <p>It all began on a sunny afternoon, where two paths crossed by fate. What started as a friendly conversation turned into endless laughter and connection.</p>
+        </div>
+        <div class="story-img">
+          <img src="img/page4.jpg" alt="How We Met">
+        </div>
+      </div>
+
+      <div class="story-item right">
+        <div class="story-img">
+          <img src="img/page5.jpg" alt="First Adventure">
+        </div>
+        <div class="story-content">
+          <h3>First Adventure</h3>
+          <p>From long drives to unexpected detours, every moment together became a story to cherish — proving that the best adventures are shared.</p>
+        </div>
+      </div>
+
+      <div class="story-item left">
+        <div class="story-content">
+          <h3>The Proposal</h3>
+          <p>Under a sky full of stars, a promise was made — to grow, to laugh, and to love each other through every season of life.</p>
+        </div>
+        <div class="story-img">
+          <img src="img/page6.jpg" alt="The Proposal">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" class="section gallery-section">
+    <h2>Gallery</h2>
+    <p>Explore our favorite moments captured beautifully.</p>
+
+    <div class="gallery-container">
+      <!-- Collage Layout -->
+      <div class="gallery-collage">
+        <div class="gallery-item tall"><img src="img/page7.jpg" alt="Gallery 1"></div>
+        <div class="gallery-item wide"><img src="img/page8.jpg" alt="Gallery 2"></div>
+        <div class="gallery-item"><img src="img/page9.jpg" alt="Gallery 3"></div>
+        <div class="gallery-item"><img src="img/page10.jpg" alt="Gallery 4"></div>
+        <div class="gallery-item tall"><img src="img/page11.jpg" alt="Gallery 5"></div>
+        <div class="gallery-item wide"><img src="img/page12.jpg" alt="Gallery 6"></div>
+      </div>
+
+      <!-- Slider Layout -->
+      <div class="gallery-slider">
+        <div class="gallery-slide"><img src="img/page13.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="img/page14.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="img/page15.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="img/page16.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="img/page17.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="img/page18.jpg" alt=""></div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="gallery-controls">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX (shared for story + gallery images) ===== -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Full View">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+
+<!-- ===== WISHES SECTION ===== -->
+<section id="wishes" class="section wishes-section">
+  <h2>Wishes</h2>
+  <p class="wishes-intro">Share your love and warm wishes for the couple 💌</p>
+
+  <!-- Button to open modal -->
+  <button id="openWishModal" class="open-wish-btn">💫 Leave a Wish</button>
+
+  <!-- Wishes Display -->
+  <div class="wishes-container" id="wishesContainer">
+    <!-- Wishes will appear here dynamically -->
+  </div>
+
+  <!-- ===== Modal Form ===== -->
+  <div id="wishModal" class="wish-modal">
+    <div class="wish-modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <h3>💌 Send Your Wish</h3>
+      <form id="wishForm" class="wish-form">
+        <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+        <textarea id="message" name="message" placeholder="Write your wish..." required></textarea>
+        <button type="submit">Send Wish 💖</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo Text -->
+    <div class="footer-logo">
+      Victor<span>&</span>Analyka
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      &copy; 2025 Victor & Analyka. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ✅ Main JS -->
+<script src="script.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDxLwAEK58g8AcDA7eUx1BJcj4on68wTGY",
+    authDomain: "victor-analyka-wishes.firebaseapp.com",
+    databaseURL: "https://victor-analyka-wishes-default-rtdb.firebaseio.com",
+    projectId: "victor-analyka-wishes",
+    storageBucket: "victor-analyka-wishes.firebasestorage.app",
+    messagingSenderId: "445145977402",
+    appId: "1:445145977402:web:9eeb6dc47a5be691a9b03",
+    measurementId: "G-KJL90XBCBH"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // ===== Wishes Feature =====
+  const openModalBtn = document.getElementById('openWishModal');
+  const modal = document.getElementById('wishModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const wishForm = document.getElementById('wishForm');
+  const wishesContainer = document.getElementById('wishesContainer');
+
+  openModalBtn.addEventListener('click', () => modal.style.display = 'flex');
+  closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+  const wishesRef = ref(db, 'wishes');
+
+  // ===== Listen & Render Wishes with Heart Buttons =====
+  onValue(wishesRef, (snapshot) => {
+    const data = snapshot.val();
+    wishesContainer.innerHTML = '';
+    if (!data) {
+      wishesContainer.innerHTML = `<p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>`;
+      return;
+    }
+
+    const wishesArray = Object.entries(data).reverse(); // [ [id, wish], ... ]
+    
+    wishesArray.forEach(([id, wish]) => {
+      const card = document.createElement('div');
+      card.classList.add('wish-card');
+      card.innerHTML = `
+        <div class="wish-header">
+          <div class="wish-avatar-placeholder">💫</div>
+          <h3 class="wish-name">${wish.fullName}</h3>
+          <button class="heart-btn" aria-label="Like Wish">❤️ <span class="like-count">${wish.likes || 0}</span></button>
+        </div>
+        <p class="wish-message">“${wish.message}”</p>
+      `;
+      wishesContainer.appendChild(card);
+
+      // Heart button click
+      const heartBtn = card.querySelector('.heart-btn');
+      const likeCountSpan = card.querySelector('.like-count');
+
+      heartBtn.addEventListener('click', () => {
+        const wishRef = ref(db, 'wishes/' + id);
+        const newLikes = (wish.likes || 0) + 1;
+
+        // Optimistically update UI
+        likeCountSpan.textContent = newLikes;
+
+        update(wishRef, { likes: newLikes });
+      });
+    });
+  });
+
+  // Handle new wish submission
+  wishForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fullName = document.getElementById('fullName').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!fullName || !message) return alert('Please fill out both fields.');
+
+    push(wishesRef, {
+      fullName,
+      message,
+      timestamp: Date.now(),
+      likes: 0
+    });
+
+    wishForm.reset();
+    modal.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
