@@ -145,12 +145,13 @@ body::before {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+/* Default (light mode) */
 .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #003366;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
   text-align: center;
   z-index: 30;
@@ -166,6 +167,17 @@ body::before {
   font-size: clamp(1rem, 3vw, 1.3rem);
   font-weight: 300;
 }
+
+/* Dark mode */
+.dark-mode .hero-text {
+  color: #ffffff; /* Lighter text for dark background */
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+}
+
+.dark-mode body {
+  background-color: #121212; /* Dark background for the page */
+}
+
 
 /* ====== Navbar ====== */
 .navbar {
@@ -681,6 +693,95 @@ body.dark-mode .section {
   }
 }
 
+/* ==============================
+   GALLERY SECTION DARK MODE
+============================== */
+body.dark-mode .gallery-section {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(0, 119, 204, 0.7));
+  color: #e0f7ff;
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode .gallery-section h2 {
+  color: #a0e0ff;
+}
+
+body.dark-mode .gallery-section p {
+  color: #c0e8ff;
+}
+
+/* ===== Collage Layout Dark Mode ===== */
+body.dark-mode .gallery-collage {
+  background: transparent;
+}
+
+body.dark-mode .gallery-item {
+  background-color: rgba(0, 51, 102, 0.4);
+}
+
+body.dark-mode .gallery-item img {
+  filter: brightness(0.85);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+body.dark-mode .gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+/* ===== Slider Layout Dark Mode ===== */
+body.dark-mode .gallery-slider {
+  background: linear-gradient(135deg, #003366, #0055aa, #0077cc);
+}
+
+body.dark-mode .gallery-slide img {
+  filter: brightness(0.85);
+}
+
+body.dark-mode .gallery-controls button {
+  background: #0055aa;
+  color: #ffffff;
+}
+
+body.dark-mode .gallery-controls button:hover {
+  background: #0077cc;
+}
+
+/* ===== Lightbox Dark Mode ===== */
+body.dark-mode .lightbox {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+body.dark-mode .lightbox-img {
+  box-shadow: 0 0 25px rgba(0, 204, 255, 0.5);
+}
+
+body.dark-mode .lightbox .close {
+  color: #ffffff;
+}
+
+body.dark-mode .lightbox .close:hover {
+  color: #a0e0ff;
+}
+
+body.dark-mode .lightbox button.prev,
+body.dark-mode .lightbox button.next {
+  color: #ffffff;
+  background: rgba(0, 51, 102, 0.6);
+}
+
+body.dark-mode .lightbox button.prev:hover,
+body.dark-mode .lightbox button.next:hover {
+  background: rgba(0, 119, 204, 0.5);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  body.dark-mode .gallery-slide img {
+    filter: brightness(0.85);
+  }
+}
+
 
 /* ===== STORY SECTION ===== */
 .story-section {
@@ -797,6 +898,43 @@ body.dark-mode .section {
 .story-item.right.show {
   transition-delay: 0.4s;
 }
+/* ===== DARK MODE FOR STORY SECTION ===== */
+.dark-mode .story-section {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.dark-mode .story-section h2 {
+  color: #ffffff;
+}
+
+.dark-mode .story-intro {
+  color: #cccccc;
+}
+
+.dark-mode .story-content {
+  background: rgba(30, 30, 30, 0.7);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+}
+
+.dark-mode .story-content h3 {
+  color: #ffffff;
+}
+
+.dark-mode .story-content p {
+  color: #dddddd;
+}
+
+.dark-mode .story-img img {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.dark-mode .story-img img:hover {
+  transform: scale(1.05);
+}
+
 
 /* ===== MODAL ===== */
 .modal { display: none; position: fixed; z-index: 2000; left:0; top:0; width:100%; height:100%; overflow:auto; backdrop-filter: blur(6px); background-color: rgba(0,0,0,0.6);}
@@ -835,7 +973,7 @@ body.dark-mode .section {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: #003366;
 }
 
 .wishes-intro {
@@ -851,7 +989,7 @@ body.dark-mode .section {
   border: none;
   padding: 12px 30px;
   border-radius: 30px;
-  color: #fff;
+  color: #003366;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   cursor: pointer;
@@ -910,15 +1048,56 @@ body.dark-mode .section {
 .wish-name {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: #fff;
+  color: #003366;
 }
 
 .wish-message {
   font-family: 'Poppins', sans-serif;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #003366;
   line-height: 1.5;
 }
+
+/* ===== DARK MODE ===== */
+.dark-mode .wishes-section {
+  color: #e0e0e0;
+  background-color: #121212;
+}
+
+.dark-mode .wishes-section h2 {
+  color: #ffffff;
+}
+
+.dark-mode .wishes-intro {
+  color: #cccccc;
+}
+
+.dark-mode .open-wish-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+.dark-mode .open-wish-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .wish-card {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .wish-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .wish-name,
+.dark-mode .wish-message {
+  color: #ffffff;
+}
+
+.dark-mode .wish-avatar-placeholder {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 
 /* ===== MODAL ===== */
 .wish-modal {
@@ -1125,93 +1304,191 @@ body.dark-mode .glass-section {
   margin-bottom: 20px;
 }
 
-/* ===== Glassy Section Styling ===== */
-.glass-section {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px) saturate(180%);
-  -webkit-backdrop-filter: blur(15px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 2rem 0;
-  color: #fff;
-  transition: all 0.3s ease;
-}
 
-/* ===== Glowing Headings ===== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Great Vibes', cursive;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ff6ec7, 0 0 20px #ff6ec7;
-  animation: glowFade 2s ease-in-out infinite alternate;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+/* =========================
+   DARK MODE - MARINE BLUE
+========================= */
 
-/* Glow Fade Animation */
-@keyframes glowFade {
-  0% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff6ec7, 0 0 20px #ff6ec7;
-  }
-  50% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff99dd, 0 0 30px #ff99dd;
-  }
-  100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff6ec7, 0 0 20px #ff6ec7;
-  }
-}
-
-/* Dark Mode Support */
+/* ===== GLOBAL DARK MODE SETTINGS ===== */
 body.dark-mode {
-  background-color: #111;
-  color: #eee;
+  background: linear-gradient(135deg, #003366, #0055aa, #0077cc);
+  color: #e0e0e0;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4, 
-body.dark-mode h5, 
-body.dark-mode h6 {
-  color: #ff6ec7;
-  text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff99dd, 0 0 30px #ff99dd;
+body.dark-mode *,
+body.dark-mode *::before,
+body.dark-mode *::after {
+  transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
 }
 
-/* ===== Subtle Glow for Headings Inside Glass Sections ===== */
-.glass-section h1,
-.glass-section h2,
-.glass-section h3,
-.glass-section h4,
-.glass-section h5,
-.glass-section h6 {
-  color: #fff;
-  text-shadow: 0 0 3px #fff, 0 0 6px #ff6ec7, 0 0 10px #ff6ec7;
-  animation: glassGlowFade 2.5s ease-in-out infinite alternate;
+/* ===== HERO TEXT ===== */
+body.dark-mode .hero-text {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-/* Subtle Glow Animation */
-@keyframes glassGlowFade {
-  0% {
-    text-shadow: 0 0 3px #fff, 0 0 6px #ff6ec7, 0 0 10px #ff6ec7;
-  }
-  50% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff99dd, 0 0 15px #ff99dd;
-  }
-  100% {
-    text-shadow: 0 0 3px #fff, 0 0 6px #ff6ec7, 0 0 10px #ff6ec7;
-  }
+/* ===== WISHES SECTION ===== */
+body.dark-mode .wishes-section {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(0, 119, 204, 0.8));
+  backdrop-filter: blur(8px);
 }
 
-/* Dark Mode Subtle Glow for Glass Sections */
-body.dark-mode .glass-section h1,
-body.dark-mode .glass-section h2,
-body.dark-mode .glass-section h3,
-body.dark-mode .glass-section h4,
-body.dark-mode .glass-section h5,
-body.dark-mode .glass-section h6 {
-  color: #ffd6f0;
-  text-shadow: 0 0 5px #ff99dd, 0 0 10px #ff99dd, 0 0 15px #ffccf0;
+body.dark-mode .wishes-section h2 {
+  color: #a0e0ff;
 }
 
+body.dark-mode .wishes-intro,
+body.dark-mode .wish-name,
+body.dark-mode .wish-message {
+  color: #c0e8ff;
+}
+
+body.dark-mode .open-wish-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+body.dark-mode .open-wish-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+body.dark-mode .wish-card {
+  background: rgba(0, 51, 102, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .wish-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .wish-avatar-placeholder {
+  background: rgba(0, 51, 102, 0.5);
+}
+
+/* ===== STORY SECTION ===== */
+body.dark-mode .story-section {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.6), rgba(0, 119, 204, 0.6));
+  backdrop-filter: blur(8px);
+}
+
+body.dark-mode .story-section h2 {
+  color: #a0e0ff;
+}
+
+body.dark-mode .story-intro,
+body.dark-mode .story-content p {
+  color: #c0e8ff;
+}
+
+body.dark-mode .story-content {
+  background: rgba(0, 51, 102, 0.5);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  color: #e0f7ff;
+}
+
+body.dark-mode .story-content h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .story-img img {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-mode .story-img img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* ===== GALLERY / COLLAGE ===== */
+body.dark-mode .gallery-item {
+  background-color: rgba(0, 51, 102, 0.4);
+}
+
+body.dark-mode .gallery-item img {
+  filter: brightness(0.85);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+body.dark-mode .gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+body.dark-mode .gallery-slider {
+  background: linear-gradient(135deg, #003366, #0055aa, #0077cc);
+}
+
+body.dark-mode .gallery-slide img {
+  filter: brightness(0.85);
+}
+
+body.dark-mode .gallery-controls button {
+  background: #0055aa;
+  color: #ffffff;
+}
+
+body.dark-mode .gallery-controls button:hover {
+  background: #0077cc;
+}
+
+body.dark-mode .lightbox {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+body.dark-mode .lightbox-img {
+  box-shadow: 0 0 25px rgba(0, 204, 255, 0.5);
+}
+
+body.dark-mode .lightbox .close {
+  color: #ffffff;
+}
+
+body.dark-mode .lightbox .close:hover {
+  color: #a0e0ff;
+}
+
+body.dark-mode .lightbox button.prev,
+body.dark-mode .lightbox button.next {
+  color: #ffffff;
+  background: rgba(0, 51, 102, 0.6);
+}
+
+body.dark-mode .lightbox button.prev:hover,
+body.dark-mode .lightbox button.next:hover {
+  background: rgba(0, 119, 204, 0.5);
+}
+
+/* ===== VENUE SECTION ===== */
+body.dark-mode .venue-section {
+  background: linear-gradient(135deg, #003366, #0055aa, #0077cc);
+  color: #e0f7ff;
+}
+
+body.dark-mode .venue-section h2 {
+  color: #a0e0ff;
+}
+
+body.dark-mode .venue-section p,
+body.dark-mode .venue-details p {
+  color: #c0e8ff;
+}
+
+body.dark-mode .venue-map {
+  border: 2px solid #a0e0ff;
+}
+
+/* ===== GLASSY SECTION ===== */
+body.dark-mode .glass-section {
+  background: rgba(0, 51, 102, 0.4);
+  color: #e0f7ff;
+  box-shadow: 0 8px 32px rgba(0, 51, 102, 0.5);
+}
+
+body.dark-mode .glass-section h2 {
+  color: #a0e0ff;
+}
 
 /* ====== CSS END ====== */
