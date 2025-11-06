@@ -1,0 +1,30 @@
+/* =========================
+   GALLERY SECTION
+========================= */
+.gallery-section {
+  text-align: center;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery-item {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+}

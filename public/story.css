@@ -1,0 +1,36 @@
+/* =========================
+   STORY SECTION
+========================= */
+.story-section .story-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.07);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.story-item.left .story-content {
+  order: 1;
+  padding: 20px;
+}
+
+.story-item.left .story-img {
+  order: 2;
+}
+
+.story-item.right .story-content {
+  order: 2;
+  padding: 20px;
+}
+
+.story-item.right .story-img {
+  order: 1;
+}
+
+.story-item img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+}
