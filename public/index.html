@@ -55,18 +55,18 @@
     </div>
   </nav>
 
-  <!-- ===== Vertical Heart Divider Line ===== -->
+  <!-- ===== Vertical Heart Divider Line =====
   <div class="vertical-timeline">
     <div class="diamond"></div>
     <div class="diamond"></div>
     <div class="diamond"></div>
     <div class="diamond"></div>
-  </div>
+  </div> -->
 
   <!-- ===== HERO SECTION ===== -->
   <section id="home" class="hero-section">
     <div class="slider">
-      <div class="slide active"><img src="../img/page1.jpg"Slide 1"></div>
+      <div class="slide active"><img src="../img/page1.jpg" alt="Slide 1"></div>
       <div class="slide"><img src="../img/page2.jpg" alt="Slide 2"></div>
       <div class="slide"><img src="../img/page3.jpg" alt="Slide 3"></div>
 
@@ -129,7 +129,9 @@
   <div class="gallery-container">
     <!-- Collage Layout -->
     <div class="gallery-collage">
-      <div class="gallery-item tall"><img src="../img/page7.jpg" alt="Gallery 1"></div>
+      <div class="gallery-item tall"><!-- Inside .gallery-collage & .gallery-slider -->
+<img src="../img/page7.jpg" alt="Gallery 1" class="lightbox-trigger">
+
       <div class="gallery-item wide"><img src="../img/page8.jpg" alt="Gallery 2"></div>
       <div class="gallery-item"><img src="../img/page9.jpg" alt="Gallery 3"></div>
       <div class="gallery-item"><img src="../img/page10.jpg" alt="Gallery 4"></div>
@@ -158,11 +160,12 @@
 
   <!-- ===== LIGHTBOX (shared for story + gallery images) ===== -->
   <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="Full View">
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="" alt="Full View">
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+
 
   <!-- ===== 3D IMAGE CAROUSEL SECTION ===== -->
 <section id="carousel3D" class="section carousel3d-section">
@@ -325,6 +328,7 @@
 
 <!-- ✅ Main JS -->
  <script src="./darkmode.js"></script>
+ <script src="./hero.js"></script>
  <script src="./galleryslider.js"></script>
 <!-- <script src="./script.js"></script> -->
 <script type="module">
