@@ -318,12 +318,4 @@ carousel3D.addEventListener('mouseleave', startAutoRotate);
   });
 })();
 
-
-// Recalculate depth when window resizes
-window.addEventListener('resize', updateDepth);
-
-// Initialize
-updateDepth();
-startAutoRotate();
-
 });
