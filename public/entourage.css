@@ -48,6 +48,22 @@
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.6);
 }
+/* Make all entourage images fit nicely */
+.entourage-group img,
+.sub-group img {
+  width: 100%;
+  height: 250px;        /* fixed height for consistency */
+  object-fit: cover;    /* crops image to fill without distortion */
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.entourage-group img:hover,
+.sub-group img:hover {
+  transform: scale(1.05);
+}
+
 
 /* Names and roles */
 .entourage-name {
