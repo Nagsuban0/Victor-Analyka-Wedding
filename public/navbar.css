@@ -47,6 +47,7 @@
   font-weight: bold;
   color: #fff;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  text-align: center;
 }
 
 .logo span {
@@ -69,6 +70,17 @@
   transition: all 0.3s ease;
 }
 
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Dark Mode Toggle */
 #darkModeToggle {
   background: none;
@@ -81,7 +93,8 @@
 
 /* Responsive Navbar */
 @media (max-width: 992px) {
-  .nav-links {
+  .nav-links.left-links,
+  .nav-links.right-links {
     flex-direction: column;
     width: 100%;
     display: none;
@@ -104,9 +117,8 @@
   }
 
   .logo {
-    text-align: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin: 10px 0;
   }
 
   #darkModeToggle {
