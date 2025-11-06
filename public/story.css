@@ -102,3 +102,7 @@
     max-width: 90%;
   }
 }
+.story-item img {
+  cursor: pointer; /* <-- new */
+}
+

@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxPrev = lightbox.querySelector(".prev");
 
   // Gather all images (gallery + slider)
-  const lightboxImages = document.querySelectorAll(".lightbox-trigger");
+  const lightboxImages = document.querySelectorAll(".lightbox-trigger, .story-item img");
   let lightboxIndex = 0;
 
   function openLightbox(index) {
