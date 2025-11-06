@@ -6,7 +6,6 @@
   <title>Victor | Analyka</title>
   <link rel="stylesheet" href="./styles.css">
    <!-- <link rel="stylesheet" href="./global.css">
-   <link rel="stylesheet" href="./navbar.css">
    <link rel="stylesheet" href="./hero.css">
    <link rel="stylesheet" href="./story.css">
    <link rel="stylesheet" href="./gallery.css">
@@ -55,18 +54,18 @@
     </div>
   </nav>
 
-  <!-- ===== Vertical Heart Divider Line =====
+  <!-- ===== Vertical Heart Divider Line ===== -->
   <div class="vertical-timeline">
     <div class="diamond"></div>
     <div class="diamond"></div>
     <div class="diamond"></div>
     <div class="diamond"></div>
-  </div> -->
+  </div>
 
   <!-- ===== HERO SECTION ===== -->
   <section id="home" class="hero-section">
     <div class="slider">
-      <div class="slide active"><img src="../img/page1.jpg" alt="Slide 1"></div>
+      <div class="slide active"><img src="../img/page1.jpg"Slide 1"></div>
       <div class="slide"><img src="../img/page2.jpg" alt="Slide 2"></div>
       <div class="slide"><img src="../img/page3.jpg" alt="Slide 3"></div>
 
@@ -121,48 +120,47 @@
     </div>
   </section>
 
-<!-- ===== GALLERY SECTION ===== -->
-<section id="gallery" class="section gallery-section">
-  <h2>Gallery</h2>
-  <p>Explore our favorite moments captured beautifully.</p>
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" class="section gallery-section">
+    <h2>Gallery</h2>
+    <p>Explore our favorite moments captured beautifully.</p>
 
-  <div class="gallery-container">
-<!-- Collage layout -->
-<div class="gallery-item tall"><img src="../img/page7.jpg" alt="Gallery 1" class="lightbox-trigger"></div>
-<div class="gallery-item wide"><img src="../img/page8.jpg" alt="Gallery 2" class="lightbox-trigger"></div>
-<div class="gallery-item"><img src="../img/page9.jpg" alt="Gallery 3" class="lightbox-trigger"></div>
-<div class="gallery-item"><img src="../img/page10.jpg" alt="Gallery 4" class="lightbox-trigger"></div>
-<div class="gallery-item tall"><img src="../img/page11.jpg" alt="Gallery 5" class="lightbox-trigger"></div>
-<div class="gallery-item wide"><img src="../img/page12.jpg" alt="Gallery 6" class="lightbox-trigger"></div>
+    <div class="gallery-container">
+      <!-- Collage Layout -->
+      <div class="gallery-collage">
+        <div class="gallery-item tall"><img src="../img/page7.jpg" alt="Gallery 1"></div>
+        <div class="gallery-item wide"><img src="../img/page8.jpg" alt="Gallery 2"></div>
+        <div class="gallery-item"><img src="../img/page9.jpg" alt="Gallery 3"></div>
+        <div class="gallery-item"><img src="../img/page10.jpg" alt="Gallery 4"></div>
+        <div class="gallery-item tall"><img src="../img/page11.jpg" alt="Gallery 5"></div>
+        <div class="gallery-item wide"><img src="../img/page12.jpg" alt="Gallery 6"></div>
+      </div>
 
-<!-- Slider layout -->
-<div class="gallery-slide"><img src="../img/page13.jpg" alt="" class="lightbox-trigger"></div>
-<div class="gallery-slide"><img src="../img/page14.jpg" alt="" class="lightbox-trigger"></div>
-<div class="gallery-slide"><img src="../img/page15.jpg" alt="" class="lightbox-trigger"></div>
-<div class="gallery-slide"><img src="../img/page16.jpg" alt="" class="lightbox-trigger"></div>
-<div class="gallery-slide"><img src="../img/page17.jpg" alt="" class="lightbox-trigger"></div>
-<div class="gallery-slide"><img src="../img/page18.jpg" alt="" class="lightbox-trigger"></div>
+      <!-- Slider Layout -->
+      <div class="gallery-slider">
+        <div class="gallery-slide"><img src="../img/page13.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="../img/page14.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="../img/page15.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="../img/page16.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="../img/page17.jpg" alt=""></div>
+        <div class="gallery-slide"><img src="../img/page18.jpg" alt=""></div>
+      </div>
 
-
-    <!-- Slider Controls -->
-    <div class="gallery-controls">
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <!-- Slider Controls -->
+      <div class="gallery-controls">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
- <!-- LIGHTBOX CARD -->
-<div id="lightbox" class="lightbox">
-  <div class="lightbox-card">
+  <!-- ===== LIGHTBOX (shared for story + gallery images) ===== -->
+  <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-img" src="" alt="Full View">
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
-</div>
-
 
   <!-- ===== 3D IMAGE CAROUSEL SECTION ===== -->
 <section id="carousel3D" class="section carousel3d-section">
@@ -324,9 +322,6 @@
 </footer>
 
 <!-- ✅ Main JS -->
- <!-- <script src="./darkmode.js"></script>
- <script src="./hero.js"></script>
- <script src="./galleryslider.js"></script> -->
 <script src="./script.js"></script>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
