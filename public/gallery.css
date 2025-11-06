@@ -3,6 +3,7 @@
 ========================= */
 .gallery-section {
   text-align: center;
+  padding: 50px 20px;
 }
 
 .gallery-container {
@@ -16,15 +17,26 @@
   background: rgba(255,255,255,0.1);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* stronger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 250px; /* responsive width */
+  max-width: 300px; /* limit maximum size */
+  aspect-ratio: 4 / 3; /* keeps a consistent card shape */
 }
 
 .gallery-item:hover {
   transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7); /* hover shadow effect */
 }
 
 .gallery-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* make image fit container */
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); /* subtle zoom on hover */
 }
