@@ -204,3 +204,159 @@ body.dark-mode .entourage-section .two-col.with-divider::before {
     font-size: 16px;
   }
 }
+
+
+/* ==============================
+   SECONDARY SPONSORS SECTION CSS
+   ============================== */
+
+/* Base Section */
+.secondary-sponsors-section {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.secondary-sponsors-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  color: #3a2b13;
+  margin-bottom: 42px;
+  letter-spacing: 1px;
+}
+
+/* Two-column layout for Veil & Cord */
+.secondary-sponsors-section .two-col {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  position: relative;
+  flex-wrap: nowrap;
+  margin-bottom: 48px;
+}
+
+/* Elegant Divider */
+.secondary-sponsors-section .two-col.with-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, rgba(196,165,110,0) 0%, rgba(196,165,110,0.8) 50%, rgba(196,165,110,0) 100%);
+  border-left: 1px dashed rgba(196,165,110,0.55);
+}
+
+/* Box Styling */
+.secondary-sponsors-section .col-box {
+  flex: 1;
+  min-width: 270px;
+  padding: 26px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.7), rgba(250,245,225,0.4));
+  border: 1px solid rgba(196,165,110,0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  transition: box-shadow 0.35s ease;
+}
+
+.secondary-sponsors-section .col-box:hover {
+  box-shadow: 0 0 28px rgba(196,165,110,0.45);
+}
+
+/* Titles */
+.secondary-sponsors-section .entourage-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3a2b13;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Names */
+.secondary-sponsors-section .entourage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secondary-sponsors-section .entourage-list li {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(196,165,110,0.3);
+  letter-spacing: 0.2px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .secondary-sponsors-section .two-col {
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  .secondary-sponsors-section .two-col.with-divider::before {
+    left: 50%;
+  }
+
+  .secondary-sponsors-section .col-box {
+    min-width: 49%;
+    padding: 18px;
+  }
+
+  .secondary-sponsors-section .entourage-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* === Dark Mode for Secondary Sponsors === */
+body.dark-mode .secondary-sponsors-section {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 51, 102, 0.3),
+    rgba(0, 119, 204, 0.25)
+  );
+  color: #d6ecff;
+  backdrop-filter: blur(6px);
+}
+
+body.dark-mode .secondary-sponsors-section h2 {
+  color: #a0e0ff;
+  text-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .secondary-sponsors-section .col-box {
+  border: 1px solid rgba(160, 224, 255, 0.45);
+  background: rgba(0, 51, 102, 0.38);
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.25);
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+}
+
+body.dark-mode .secondary-sponsors-section .col-box:hover {
+  box-shadow: 0 0 26px rgba(0, 174, 255, 0.55);
+}
+
+body.dark-mode .secondary-sponsors-section .entourage-title {
+  color: #c8eeff;
+  text-shadow: 0 0 10px rgba(0, 174, 255, 0.35);
+}
+
+body.dark-mode .secondary-sponsors-section .entourage-list li {
+  color: #e0faff;
+  border-bottom: 1px dashed rgba(160, 224, 255, 0.3);
+}
+
+body.dark-mode .secondary-sponsors-section .two-col.with-divider::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(160, 224, 255, 0.15),
+    rgba(160, 224, 255, 0.65),
+    rgba(160, 224, 255, 0.15)
+  );
+  border-left: 1px dashed rgba(160, 224, 255, 0.45);
+}
