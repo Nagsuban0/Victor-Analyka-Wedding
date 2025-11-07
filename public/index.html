@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Victor | Analyka</title>
   <link rel="stylesheet" href="./styles.css">
-   <link rel="stylesheet" href="./entourage.css">
+  <link rel="stylesheet" href="./test-entourage.css">
+  <link rel="stylesheet" href="./loading.css">
+   <!-- <link rel="stylesheet" href="./entourage.css"> -->
    <!-- <link rel="stylesheet" href="./global.css">
    <link rel="stylesheet" href="./hero.css">
    <link rel="stylesheet" href="./story.css">
@@ -15,10 +17,18 @@
    <link rel="stylesheet" href="./wish.css"> -->
   <!-- Add these fonts for Jack & Rose look -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> -->
 
 </head>
 <body class="dark-mode">
+  <!-- V&A GIF Modal -->
+<div id="vaModal" class="va-modal">
+  <div class="va-modal-content">
+    <!-- <span id="vaClose" class="va-close">&times;</span> -->
+    <img src="../img/V&A.gif" alt="V&A GIF" class="va-gif">
+  </div>
+</div>
+
   <!-- ===== Animated Background =====
   <div class="animated-background">
     <img src="../img/page20.jpg" alt="Background Left" class="bg-left">
@@ -68,16 +78,17 @@
   <!-- ===== HERO SECTION ===== -->
   <section id="home" class="hero-section">
     <div class="slider">
-      <div class="slide active"><img src="../img/page1.jpg"Slide 1"></div>
-      <div class="slide"><img src="../img/page2.jpg" alt="Slide 2"></div>
-      <div class="slide"><img src="../img/page3.jpg" alt="Slide 3"></div>
+  <div class="slide active"><img src="../img/page1.jpg" alt="Slide 1"></div>
+  <div class="slide"><img src="../img/page2.jpg" alt="Slide 2"></div>
+  <div class="slide"><img src="../img/page3.jpg" alt="Slide 3"></div>
 
-      <div class="dots">
-        <span class="dot active" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-      </div>
-    </div>
+  <div class="dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+  </div>
+</div>
+
 
     <div class="hero-text">
       <h1>Welcome to Journey</h1>
@@ -165,77 +176,110 @@
     <button class="next">&#10095;</button>
   </div>
 
-  <!-- ===== 3D IMAGE CAROUSEL SECTION ===== -->
-<section id="carousel3D" class="section carousel3d-section">
-  <h2>Memories in Motion</h2>
-  <p class="carousel-intro">Spin through some of our favorite moments 💞</p>
-
-  <div class="carousel3d-container">
-    <div class="carousel3d">
-      <img src="../img/page1.jpg" alt="Memory 1">
-      <img src="../img/page2.jpg" alt="Memory 2">
-      <img src="../img/page3.jpg" alt="Memory 3">
-      <img src="../img/page4.jpg" alt="Memory 4">
-      <img src="../img/page5.jpg" alt="Memory 5">
-      <img src="../img/page6.jpg" alt="Memory 6">
-    </div>
-  </div>
-
-  <div class="carousel-controls">
-    <button id="prev3D">❮</button>
-    <button id="next3D">❯</button>
-  </div>
-</section>
-
-
+  <!-- ENTOURAGE -->
 <section class="entourage-section">
-  <h2>Wedding Party</h2>
-  <p>Meet our amazing friends and family who are by our side on this special day.</p>
+  <h2>The Entourage</h2>
 
-  <!-- Best Man & Maid of Honor -->
-  <div class="entourage-main">
-    <div class="entourage-group best-man">
-      <img src="../img/page10.jpg" alt="Best Man" />
-      <div class="entourage-name">John Doe</div>
-      <div class="entourage-role">Best Man</div>
+  <!-- Best Man / Maid of Honor -->
+  <div class="two-col with-divider">
+    <div class="col-box">
+      <h3 class="entourage-title">BEST MEN</h3>
+      <ul class="entourage-list">
+        <li>Mr. Jerold San Andress</li>
+        <li>Mr. Erickson San Andress</li>
+      </ul>
     </div>
 
-    <!-- Maid of Honor --> -->
-    <div class="entourage-group maid-of-honor">
-      <img src="../img/page11.jpg" alt="Maid of Honor" />
-      <div class="entourage-name">Jane Smith</div>
-      <div class="entourage-role">Maid of Honor</div>
+    <div class="col-box">
+      <h3 class="entourage-title">MAID OF HONOR</h3>
+      <ul class="entourage-list">
+        <li>Ms. Lorena Damatan</li>
+      </ul>
     </div>
   </div>
 
-  <!-- Other bridesmaids/groomsmen -->
-  <div class="entourage-container">
-    <div class="sub-group">
-      <img src="../img/page1.jpg" alt="Friend 1" />
-      <div class="entourage-name">Alice Brown</div>
-      <div class="entourage-role">Bridesmaid</div>
+  <!-- Groomsmen / Bridesmaids -->
+  <div class="two-col with-divider">
+    <div class="col-box">
+      <h3 class="entourage-title">GROOMSMEN</h3>
+      <ul class="entourage-list">
+        <li>Mr. Brandon James Damatan</li>
+        <li>Mr. Kenneth Nagsuban</li>
+        <li>Mr. Ronnel Garcia</li>
+        <li>Mr. John Resty Ramirez</li>
+        <li>Mr. Ariel Callueng</li>
+        <li>Mr. Jellener Jhordan Pugao</li>
+      </ul>
     </div>
 
-    <div class="sub-group">
-      <img src="../img/page2.jpg" alt="Friend 2" />
-      <div class="entourage-name">Bob Green</div>
-      <div class="entourage-role">Groomsman</div>
+    <div class="col-box">
+      <h3 class="entourage-title">BRIDESMAIDS</h3>
+      <ul class="entourage-list">
+        <li>Ms. Sabrina Phoelix Francisco</li>
+        <li>Ms. Xandria Cealin Lisondra</li>
+        <li>Ms. Blessie Jane Damatan</li>
+        <li>Ms. Desiree Medina</li>
+        <li>Ms. Dhaisy Pangan</li>
+        <li>Ms. Jayzel Teodoro</li>
+        <li>Ms. Jeraldine Astorga</li>
+        <li>Ms. Mia Villanueva</li>
+        <li>Ms. Liana Cruz</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Flower Girls -->
+  <div class="one-col">
+    <div class="col-box">
+      <h3 class="entourage-title">FLOWER GIRLS</h3>
+      <ul class="entourage-list">
+        <li>Miss Althea Ramirez</li>
+        <li>Miss Sofia Callueng</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sponsors -->
+  <div class="two-col with-divider">
+    <div class="col-box">
+      <h3 class="entourage-title">PRINCIPAL SPONSORS</h3>
+      <ul class="entourage-list">
+        <li>Mr. & Mrs. Ernesto Damatan</li>
+        <li>Mr. & Mrs. Jonathan San Andress</li>
+      </ul>
     </div>
 
-    <div class="sub-group">
-      <img src="../img/page3.jpg" alt="Friend 3" />
-      <div class="entourage-name">Clara White</div>
-      <div class="entourage-role">Bridesmaid</div>
+    <div class="col-box">
+      <h3 class="entourage-title"> SECONDARY SPONSORS</h3>
+      <p>"To light our path to righteousness"</p>
+      <ul class="entourage-list">
+        <li>Mr. King Ceasar Tomas</li>
+        <li>Ms. Edjelyn Vallestero</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Veil & Cord -->
+  <div class="two-col with-divider">
+    <div class="col-box">
+      <h3 class="entourage-title">VEIL</h3>
+      <p>"To clothe us in love"</p>
+      <ul class="entourage-list">
+        <li>Mr. Jomar Diñozo</li>
+        <li>Mrs. Cariza Diñozo</li>
+      </ul>
     </div>
 
-    <div class="sub-group">
-      <img src="../img/page4.jpg" alt="Friend 4" />
-      <div class="entourage-name">David Black</div>
-      <div class="entourage-role">Groomsman</div>
+    <div class="col-box">
+      <h3 class="entourage-title">CORD</h3>
+      <p>"To bind us together in unity"</p>
+      <ul class="entourage-list">
+        <li>Mr. Monchito Grullo</li>
+        <li>Ms. Joelina Vallestero</li>
+      </ul>
     </div>
   </div>
 </section>
-
 
 
 
@@ -307,6 +351,7 @@
 
 <!-- ✅ Main JS -->
 <script src="./script.js"></script>
+<script src="./loading.js"></script>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
   import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";

@@ -1,114 +1,236 @@
-/* =========================
-   ENTOURAGE SECTION
-========================= */
+/* ——— Base Section ——— */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  color: #111;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+/* ——— Entourage Section ——— */
 .entourage-section {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
-  padding: 80px 20px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
+  padding: 60px 20px;
 }
 
-.entourage-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+.entourage-section h2, h3{
+  font-family: "Playfair Display", serif; /* match h3 titles */
+  font-size: 24px; /* same size as h3 */
+  color: #003366; /* same as h3 */
+  letter-spacing: 1px;
+  margin-bottom: 16px; /* same spacing as h3 */
+  text-shadow: 0 0 8px rgba(197,164,81,0.25); /* subtle glow like h3 */
+  font-weight: 600; /* same as h3 */
+  text-transform: uppercase; /* match h3 style */
+  animation: fadeIn 1.2s ease; /* keep fade-in if desired */
 }
 
-.entourage-section p {
-  font-size: 1.1rem;
-  color: #ddd;
-  margin-bottom: 50px;
-}
 
-/* Container for main duo (Best Man + Maid of Honor) */
-.entourage-main {
+/* ——— Two-Column Layout ——— */
+.two-col {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
+  position: relative;
+  flex-wrap: nowrap;
 }
 
-/* Cards */
-.entourage-group, .sub-group {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  max-width: 300px;
+/* ✅ Elegant Gold Divider (glowing + dashed) */
+.two-col.with-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(197,164,81,0.15),
+    rgba(197,164,81,0.85),
+    rgba(197,164,81,0.15)
+  );
+  border-left: 1px dashed rgba(197,164,81,0.5);
+  transform: translateX(-50%);
+  animation: glowLine 3s ease-in-out infinite alternate;
+}
+
+/* Vertical Glow Animation */
+@keyframes glowLine {
+  0%   { box-shadow: 0 0 6px rgba(197,164,81,0.3); }
+  100% { box-shadow: 0 0 16px rgba(197,164,81,0.9); }
+}
+
+/* ——— Box Styling (premium) ——— */
+.col-box {
   flex: 1;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 250px;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(197,164,81,0.4);
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.65),
+    rgba(255,248,225,0.35)
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
 }
 
-.entourage-group:hover, .sub-group:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+/* ✅ Premium Floral Corner Ornaments */
+.col-box::before,
+.col-box::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(197,164,81,0.6);
+  border-radius: 4px;
 }
 
-/* Images */
-.entourage-group img,
-.sub-group img {
-  width: 100%;
-  height: 280px;          /* consistent card height */
-  object-fit: cover;      /* crop to fit nicely */
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
+.col-box::before {
+  top: 10px;
+  left: 10px;
+  border-bottom: none;
+  border-right: none;
 }
 
-.entourage-group img:hover,
-.sub-group img:hover {
-  transform: scale(1.05);
+.col-box::after {
+  bottom: 10px;
+  right: 10px;
+  border-top: none;
+  border-left: none;
 }
 
-/* Names and roles */
-.entourage-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: #fff;
-  margin-top: 10px;
+/* Hover Glow */
+.col-box:hover {
+  box-shadow: 0 0 28px rgba(197,164,81,0.55);
+  transform: translateY(-4px);
 }
 
-.entourage-role {
-  font-size: 1rem;
-  color: #ccc;
+/* ——— Titles ——— */
+/* Make h3 titles match h2 style */
+.entourage-title {
+  font-family: "Playfair Display", serif; /* same as h2 */
+  font-size: 24px; /* slightly smaller than h2 for hierarchy */
+  color: #003366; /* same as h2 */
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(197,164,81,0.25); /* subtle glow like h2 */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
 }
 
-/* Best Man & Maid of Honor special styling */
-.best-man, .maid-of-honor {
-  border: 2px solid #fff;
-  padding: 25px;
-  background: rgba(255,255,255,0.15);
-  max-width: 320px;
+
+/* ✅ Gold icon badge */
+.entourage-title::before {
+  content: "✦";
+  color: rgba(197,164,81,0.9);
+  font-size: 18px;
+  text-shadow: 0 0 6px rgba(197,164,81,0.35);
 }
 
-/* Highlight their images bigger */
-.best-man img, .maid-of-honor img {
-  height: 320px;   /* slightly taller than others */
+/* ——— Names ——— */
+.entourage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Container for the rest of the wedding party */
-.entourage-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.entourage-list li {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(197,164,81,0.35);
 }
 
-/* Responsive */
+/* ——— Animations ——— */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ——— MOBILE ——— */
+/* ✅ Still 2 columns — DO NOT STACK */
 @media (max-width: 768px) {
-  .entourage-main {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  .two-col {
+    gap: 12px;
+    padding: 0 6px;
   }
-  
-  .entourage-container {
-    flex-direction: column;
-    align-items: center;
+
+  .two-col.with-divider::before {
+    left: 50%;
+  }
+
+  .col-box {
+    min-width: 48%;
+    padding: 18px;
+  }
+
+  .entourage-list li {
+    font-size: 16px;
   }
 }
+/* ——— Single Column Styling for Flower Girls ——— */
+.one-col {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.one-col .col-box {
+  max-width: 400px;
+  width: 100%;
+  padding: 26px;
+}
+
+/* Optional: smaller divider for single column sections */
+.one-col.with-divider::before {
+  display: none; /* hide divider for single-column layouts */
+}
+
+/* Animate all boxes consistently */
+.one-col .col-box,
+.two-col .col-box {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ——— Entourage Role Descriptions ——— */
+.col-box p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: rgba(197,164,81,0.85); /* gold accent */
+  font-style: italic;
+  margin: 6px 0 12px 0;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Stagger animation for nicer effect */
+.col-box:nth-child(1) { animation-delay: 0.1s; }
+.col-box:nth-child(2) { animation-delay: 0.2s; }
+.col-box:nth-child(3) { animation-delay: 0.3s; }
+.col-box:nth-child(4) { animation-delay: 0.4s; }

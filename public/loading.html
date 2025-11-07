@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark GIF Display</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      /* Dark gradient background */
+      background: radial-gradient(circle at center, #0a0a0a 0%, #000814 50%, #001d3d 100%);
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Sparkle animation background */
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .sparkle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkleAnim 4s infinite ease-in-out;
+    }
+
+    @keyframes sparkleAnim {
+      0%, 100% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1); opacity: 1; }
+    }
+
+    /* GIF container */
+    .gif-container {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      aspect-ratio: 1 / 1;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none; /* Hidden until loaded */
+      border-radius: 12px;
+    }
+
+    /* Loader */
+    .loader {
+      border: 6px solid rgba(0, 0, 0, 0.2);
+      border-top: 6px solid #00b4d8;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      z-index: 3;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sparkle Layer -->
+  <div class="sparkles" id="sparkles"></div>
+
+  <!-- GIF with Loader -->
+  <div class="gif-container">
+    <div class="loader" id="loader"></div>
+    <img id="gifImage" src="/img/V&A.gif" alt="Animated Logo">
+  </div>
+
+  <script>
+    const gif = document.getElementById('gifImage');
+    const loader = document.getElementById('loader');
+    const sparklesContainer = document.getElementById('sparkles');
+
+    // Hide loader when GIF is loaded and redirect
+    gif.addEventListener('load', () => {
+      loader.style.display = 'none';
+      gif.style.display = 'block';
+
+      // Redirect after 2 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html'; // Change to your main page
+      }, 2000);
+    });
+
+    // Create sparkles
+    const sparkleCount = 40;
+    for (let i = 0; i < sparkleCount; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      const size = Math.random() * 4 + 2;
+      sparkle.style.width = `${size}px`;
+      sparkle.style.height = `${size}px`;
+      sparkle.style.top = `${Math.random() * 100}%`;
+      sparkle.style.left = `${Math.random() * 100}%`;
+      sparkle.style.animationDelay = `${Math.random() * 4}s`;
+      sparklesContainer.appendChild(sparkle);
+    }
+  </script>
+</body>
+</html>

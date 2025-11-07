@@ -226,96 +226,96 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// ===== Responsive 3D Carousel with Autoplay, Pause & Swipe Support =====
-const carousel3D = document.querySelector('.carousel3d');
-const nextBtn3D = document.getElementById('next3D');
-const prevBtn3D = document.getElementById('prev3D');
+// // ===== Responsive 3D Carousel with Autoplay, Pause & Swipe Support =====
+// const carousel3D = document.querySelector('.carousel3d');
+// const nextBtn3D = document.getElementById('next3D');
+// const prevBtn3D = document.getElementById('prev3D');
 
-let angle = 0;
-let autoRotate;
-let depth = 500; // default translateZ depth
+// let angle = 0;
+// let autoRotate;
+// let depth = 500; // default translateZ depth
 
-// Adjust depth based on screen size
-function updateDepth() {
-  if (window.innerWidth < 480) depth = 250;
-  else if (window.innerWidth < 768) depth = 320;
-  else if (window.innerWidth < 1024) depth = 400;
-  else depth = 500;
+// // Adjust depth based on screen size
+// function updateDepth() {
+//   if (window.innerWidth < 480) depth = 250;
+//   else if (window.innerWidth < 768) depth = 320;
+//   else if (window.innerWidth < 1024) depth = 400;
+//   else depth = 500;
 
-  // Update transforms for each image
-  document.querySelectorAll('.carousel3d img').forEach((img, i) => {
-    img.style.setProperty('--i', i);
-    img.style.transform = `rotateY(${i * 60}deg) translateZ(${depth}px)`;
-  });
-}
+//   // Update transforms for each image
+//   document.querySelectorAll('.carousel3d img').forEach((img, i) => {
+//     img.style.setProperty('--i', i);
+//     img.style.transform = `rotateY(${i * 60}deg) translateZ(${depth}px)`;
+//   });
+// }
 
-function rotateCarousel() {
-  carousel3D.style.transform = `rotateY(${angle}deg)`;
-}
+// function rotateCarousel() {
+//   carousel3D.style.transform = `rotateY(${angle}deg)`;
+// }
 
-function startAutoRotate() {
-  stopAutoRotate();
-  autoRotate = setInterval(() => {
-    angle -= 60;
-    rotateCarousel();
-  }, 4000);
-}
+// function startAutoRotate() {
+//   stopAutoRotate();
+//   autoRotate = setInterval(() => {
+//     angle -= 60;
+//     rotateCarousel();
+//   }, 4000);
+// }
 
-function stopAutoRotate() {
-  clearInterval(autoRotate);
-}
+// function stopAutoRotate() {
+//   clearInterval(autoRotate);
+// }
 
-// Manual controls
-nextBtn3D.addEventListener('click', () => {
-  angle -= 60;
-  rotateCarousel();
-  startAutoRotate();
-});
+// // Manual controls
+// nextBtn3D.addEventListener('click', () => {
+//   angle -= 60;
+//   rotateCarousel();
+//   startAutoRotate();
+// });
 
-prevBtn3D.addEventListener('click', () => {
-  angle += 60;
-  rotateCarousel();
-  startAutoRotate();
-});
+// prevBtn3D.addEventListener('click', () => {
+//   angle += 60;
+//   rotateCarousel();
+//   startAutoRotate();
+// });
 
-// Pause on hover or touch-hold
-carousel3D.addEventListener('mouseenter', stopAutoRotate);
-carousel3D.addEventListener('mouseleave', startAutoRotate);
+// // Pause on hover or touch-hold
+// carousel3D.addEventListener('mouseenter', stopAutoRotate);
+// carousel3D.addEventListener('mouseleave', startAutoRotate);
 
-// ===== Swipe gesture handling =====
-(function() {
-  let startX = 0;
-  let isSwiping = false;
+// // ===== Swipe gesture handling =====
+// (function() {
+//   let startX = 0;
+//   let isSwiping = false;
 
-  carousel3D.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    isSwiping = true;
-    stopAutoRotate();
-  });
+//   carousel3D.addEventListener('touchstart', (e) => {
+//     startX = e.touches[0].clientX;
+//     isSwiping = true;
+//     stopAutoRotate();
+//   });
 
-  carousel3D.addEventListener('touchmove', (e) => {
-    if (!isSwiping) return;
-    const diff = e.touches[0].clientX - startX;
+//   carousel3D.addEventListener('touchmove', (e) => {
+//     if (!isSwiping) return;
+//     const diff = e.touches[0].clientX - startX;
 
-    // Optional: add subtle drag feedback
-    carousel3D.style.transform = `rotateY(${angle + diff / 5}deg)`;
-  });
+//     // Optional: add subtle drag feedback
+//     carousel3D.style.transform = `rotateY(${angle + diff / 5}deg)`;
+//   });
 
-  carousel3D.addEventListener('touchend', (e) => {
-    if (!isSwiping) return;
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
-    isSwiping = false;
+//   carousel3D.addEventListener('touchend', (e) => {
+//     if (!isSwiping) return;
+//     const endX = e.changedTouches[0].clientX;
+//     const diff = endX - startX;
+//     isSwiping = false;
 
-    // Swipe threshold: rotate only if swipe is big enough
-    if (Math.abs(diff) > 50) {
-      if (diff < 0) angle -= 60; // swipe left → next
-      else angle += 60; // swipe right → previous
-    }
+//     // Swipe threshold: rotate only if swipe is big enough
+//     if (Math.abs(diff) > 50) {
+//       if (diff < 0) angle -= 60; // swipe left → next
+//       else angle += 60; // swipe right → previous
+//     }
 
-    rotateCarousel();
-    startAutoRotate();
-  });
-})();
+//     rotateCarousel();
+//     startAutoRotate();
+//   });
+// })();
 
 });
