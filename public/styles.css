@@ -1026,46 +1026,8 @@ body.dark-mode .lightbox button.next:hover {
 }
 
 .wish-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-/* Thumbnail style (like the blue rectangle in your example) */
-.wish-thumbnail {
-  flex-shrink: 0;
-  width: 80px;
-  height: 50px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wish-thumbnail i {
-  color: white;
-  font-size: 1.5rem;
-}
-
-/* Text area (name + message) */
-.wish-content {
-  flex-grow: 1;
-  margin-left: 16px;
-}
-
-.wish-content h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #003366;
-  margin: 0;
-}
-
-.wish-content p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin: 4px 0 0;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgb(255, 255, 255);
 }
 
 .wish-header {
