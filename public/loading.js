@@ -13,17 +13,18 @@ window.addEventListener('load', () => {
 });
 
 
-// Scroll Fade Animation
-const sections = document.querySelectorAll('section, .hero-section, .secondary-sponsors-section, .entourage-section, .venue-section, .footer');
+// Scroll Fade + Stagger Animation
+const fadeSections = document.querySelectorAll(
+  '.section, .hero-section, .secondary-sponsors-section, .entourage-section, .venue-section'
+);
 
-const observer = new IntersectionObserver((entries) => {
+const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      fadeObserver.unobserve(entry.target); // fade only once
     }
   });
 }, { threshold: 0.2 });
 
-sections.forEach(section => observer.observe(section));
-
+fadeSections.forEach(section => fadeObserver.observe(section));
