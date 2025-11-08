@@ -360,3 +360,18 @@ body.dark-mode .secondary-sponsors-section .two-col.with-divider::before {
   );
   border-left: 1px dashed rgba(160, 224, 255, 0.45);
 }
+
+
+
+/* Initially hide sections */
+.section, .hero-section, .secondary-sponsors-section, .entourage-section, .footer {
+  opacity: 0;
+  transform: translateY(50px); /* slide up a little */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Active class when in viewport */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
