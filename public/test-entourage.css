@@ -363,15 +363,16 @@ body.dark-mode .secondary-sponsors-section .two-col.with-divider::before {
 
 
 
-/* Initially hide sections */
-.section, .hero-section, .secondary-sponsors-section, .entourage-section, .footer {
+/* Initial state for sections */
+.section, .hero-section, .secondary-sponsors-section, .entourage-section, .venue-section {
   opacity: 0;
-  transform: translateY(50px); /* slide up a little */
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(30px); /* slight move for subtle motion */
+  transition: opacity 1s ease, transform 1s ease; /* smooth fade and slide */
 }
 
-/* Active class when in viewport */
-.fade-in {
+/* When in view */
+.section.visible, .hero-section.visible, .secondary-sponsors-section.visible, .entourage-section.visible, .venue-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
