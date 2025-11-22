@@ -1,0 +1,172 @@
+/* ====== ENHANCED GLASSY CONTAINERS ====== */
+.entourage-section,
+.principal-sponsors-section,
+.secondary-sponsors-section {
+  width: 80%;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 50px 25px;
+
+  /* ✨ Advanced Glass Effect */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border-radius: 30px;
+
+  /* ✨ Frosted border + soft gradient glow */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 55px rgba(0,0,0,0.25), inset 0 0 15px rgba(255,255,255,0.05);
+
+  text-align: center; /* Center all text by default */
+  transition: all 0.4s ease;
+
+  /* Hidden initially for scroll fade animation */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Hover glow for extra luxury feel */
+.entourage-section:hover,
+.principal-sponsors-section:hover,
+.secondary-sponsors-section:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 18px 70px rgba(0,0,0,0.3), inset 0 0 25px rgba(255,255,255,0.07);
+  transform: translateY(-3px);
+}
+
+/* ===== Titles ===== */
+.entourage-section h2,
+.principal-sponsors-section h2,
+.secondary-sponsors-section h2 {
+  color: #003366;
+  font-family: "Meow Script", cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ===== Comments ===== */
+.comment,
+.centered-comment {
+  font-style: italic;
+  font-family: "Meow Script", cursive; /* Elegant wedding-style font */
+  color: #333;
+  opacity: 0.9;
+  margin-bottom: 25px;
+  font-size: 1.05rem;
+  text-align: center; /* Center all comments */
+}
+
+/* ===== Column Layouts ===== */
+.two-col {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Glassy Column Cards */
+.col-box {
+  flex: 1;
+  min-width: 260px;
+  padding: 25px 20px;
+
+  /* ✨ Extra glass depth + gradient overlay */
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15), inset 0 0 12px rgba(255,255,255,0.08);
+
+  transition: all 0.4s ease;
+
+  /* Hidden for scroll fade */
+  opacity: 0;
+  transform: translateY(20px);
+
+  text-align: center; /* Default center text inside boxes */
+}
+
+/* Hover: brighten inner glow and lift slightly */
+.col-box:hover {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+/* One-column center box */
+.one-col .col-box.center {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Column Titles */
+.col-box h3 {
+  color: #003366;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  font-size: 1.25rem;
+  text-align: center; /* Center all H3 titles */
+}
+
+/* ===== Lists Styling ===== */
+.col-box ul {
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+  font-family: "Meow Script", cursive; /* Elegant wedding-style font */
+  font-size: 1.05rem;
+  color: #111;
+  line-height: 1.7;
+  text-align: center; /* Center list items */
+}
+
+.col-box ul li {
+  padding: 4px 0; /* Space between items */
+  font-weight: 500;
+  position: relative;
+}
+
+/* Alignment helpers (use only if explicitly needed) */
+.col-box.right { text-align: right; }
+.col-box.left { text-align: left; }
+
+/* ===== DARK MODE GLASS ===== */
+.dark-mode .entourage-section,
+.dark-mode .principal-sponsors-section,
+.dark-mode .secondary-sponsors-section {
+  background: rgba(0,0,0,0.42);
+  border-color: rgba(255,179,71,0.9);
+  box-shadow: 0 12px 55px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.03);
+}
+
+.dark-mode .col-box {
+  background: rgba(0,0,0,0.38);
+  border-color: rgba(255,179,71,0.9);
+  color: #fff;
+}
+
+.dark-mode h2,
+.dark-mode .col-box h3 {
+  color: rgba(255,179,71,0.9);
+}
+
+.dark-mode .comment,
+.dark-mode .centered-comment,
+.dark-mode .col-box ul {
+  color: #ddd;
+}
+
+/* ===== SCROLLING FADE-IN ANIMATION ===== */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

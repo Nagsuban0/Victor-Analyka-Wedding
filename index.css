@@ -1,0 +1,199 @@
+/* ====== CSS START ====== */
+:root {
+  --main-color: #1e90ff; /* Change this to your preferred color */
+  --glass-bg: rgba(255,255,255,0.15);
+  --dark-bg: rgba(0,0,0,0.3);
+  --text-light: #fff;
+  --text-dark: #111;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #eee;
+  color: #111;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+  /* Remove flex centering */
+  display: block; /* or just remove display:flex entirely */
+  min-height: 100vh;
+}
+
+/* ===== Darkmode ======*/
+body.dark-mode {
+  background: #111;
+  color: #eee;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode .navbar {
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+body.dark-mode .nav-links a {
+  color: #eee;
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+  color: #f28c38;
+}
+
+#darkModeToggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 50%;
+  padding: 0.4rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+#darkModeToggle:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Dark mode logo */
+body.dark-mode .logo {
+  color: #f28c38; /* bright gold/orange for dark mode */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .logo span {
+  color: #fff; /* or any contrasting color */
+}
+
+/* ====== Navbar ====== */
+/* ====== Fixed Navbar ====== */
+.navbar {
+  position: fixed;       /* keeps navbar visible on scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 20px 20px; /* rounded bottom corners */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: background 0.3s ease;
+}
+
+/* Dark mode */
+body.dark-mode .navbar {
+  background: rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Navbar container */
+.nav-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ===== Prevent content from being hidden under navbar ===== */
+body {
+  padding-top: 70px; /* adjust according to navbar height */
+}
+
+
+.left-links, .right-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  color:  #003366;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.logo span {
+  color: #f28c38;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #f28c38;
+}
+
+/* === Humburger Navbar === */
+.hamburger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0,0,0,0.8); /* dark background for mobile menu */
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}

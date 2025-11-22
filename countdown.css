@@ -1,0 +1,114 @@
+.countdown-section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 12px 55px rgba(0,0,0,0.25), inset 0 0 15px rgba(255,255,255,0.05);
+  transition: all 0.4s ease;
+}
+
+.countdown-section h2 {
+  color: #003366;
+  font-family: "Meow Script", cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;       /* space between boxes */
+  flex-wrap: nowrap; /* keep in one line */
+}
+
+.time-box {
+  min-width: 65px;
+  padding: 15px 12px;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.time-box span {
+  display: block;
+  font-family: "Meow Script", cursive;
+  font-size: 1.6rem;
+  color: #003366;
+  margin-bottom: 3px;
+}
+
+.time-box p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #003366;
+  margin: 0;
+}
+
+/* Hover glow effect */
+.countdown-section:hover .time-box {
+  background: rgba(255,255,255,0.28);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+}
+
+/* Countdown finished message */
+.countdown-finished {
+  font-family: "Meow Script", cursive;
+  font-size: 1.6rem;
+  color: #003366;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Dark mode */
+.dark-mode .countdown-section {
+  background: rgba(0,0,0,0.42);
+  border-color: rgba(255,179,71,0.9);
+}
+
+.dark-mode .time-box {
+  background: rgba(0,0,0,0.38);
+  color: #fff;
+}
+/* Dark mode heading */
+.dark-mode .countdown-section h2 {
+  color: rgba(255,179,71,0.9); /* golden-orange for dark mode */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+
+.dark-mode .time-box span {
+  color: rgba(255,179,71,0.9);
+}
+
+.dark-mode .time-box p {
+  color: rgba(255,179,71,0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .countdown-timer {
+    gap: 10px;
+  }
+
+  .time-box {
+    padding: 10px 8px;
+  }
+
+  .time-box span {
+    font-size: 1.4rem;
+  }
+
+  .time-box p {
+    font-size: 0.7rem;
+  }
+}

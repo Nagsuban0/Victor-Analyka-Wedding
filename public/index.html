@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="refresh" content="0; url=https://nagsuban0.github.io/Victor-Analyka-Wedding/public/index.html"> -->
+  <title>Victor | Analyka</title>
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/entourage.css">
+  <link rel="stylesheet" href="/body.css">
+  <link rel="stylesheet" href="/wish.css">
+  <link rel="stylesheet" href="/lightbox.css">
+  <link rel="stylesheet" href="/venue.css">
+  <link rel="stylesheet" href="/footer.css">
+  <link rel="stylesheet" href="/loading.css">
+  <link rel="stylesheet" href="/countdown.css">
+  <link rel="stylesheet" href="/bubble.css">
+  <script src="/countdown.js"></script>
+  <script src="/index.js"></script>
+  <script src="/bubble.js"></script>
+  <!-- Bubble Flow Background -->
+<canvas id="bubbleCanvas"></canvas>
+  <!-- Add these fonts for Jack & Rose look -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> -->
+
+</head>
+<body>
+<!-- V&A GIF Modal -->
+<div id="vaModal" class="va-modal">
+  <img src="../img/V&A.gif" alt="V&A Animation" class="va-modal-gif">
+</div>
+
+<!-- ===== Updated Glassy Sticky Navbar ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Left Links -->
+      <ul class="nav-links left-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#entourage">Entourage</a></li>
+
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="logo">Victor<span>&</span>Analyka</div>
+
+      <!-- Right Links -->
+      <ul class="nav-links right-links">
+        <li><a href="#wishes">Wishes</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+      <button id="darkModeToggle">🌙</button>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger" aria-expanded="false" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero-section">
+    <div class="slider">
+  <div class="slide active"><img src="../img/page1.jpg" alt="Slide 1"></div>
+  <div class="slide"><img src="../img/page2.jpg" alt="Slide 2"></div>
+  <div class="slide"><img src="../img/page3.jpg" alt="Slide 3"></div>
+
+  <div class="dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+  </div>
+</div>
+
+    <div class="hero-text">
+      <h1>Welcome to Journey</h1>
+      <p>Your story begins here.</p>
+    </div>
+  </section>
+
+  <!-- ===== COUNTDOWN WEDDING  -->
+  <section class="countdown-section scroll-fade-in">
+  <h2>Countdown to the Wedding</h2>
+  <div class="countdown-timer" id="countdown-timer">
+    <div class="time-box">
+      <span id="days">00</span>
+      <p>Days</p>
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <p>Hours</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <p>Minutes</p>
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <p>Seconds</p>
+    </div>
+  </div>
+
+  <div id="countdown">
+  <!-- countdown content here -->
+</div>
+</section>
+
+
+
+<!-- ===== LOVE STORY ===== -->
+  <section id="story" class="section story-section">
+    <h2>Our Love Story</h2>
+    <p class="story-intro">Every chapter tells a piece of our journey — filled with laughter, adventures, and dreams.</p>
+
+    <div class="story-timeline">
+      <div class="story-item left">
+        <div class="story-content">
+          <h3>How We Met</h3>
+          <p>It all began on a sunny afternoon, where two paths crossed by fate. What started as a friendly conversation turned into endless laughter and connection.</p>
+        </div>
+        <div class="story-img">
+          <img src="../img/page4.jpg" alt="How We Met">
+        </div>
+      </div>
+
+      <div class="story-item right">
+        <div class="story-img">
+          <img src="../img/page5.jpg" alt="First Adventure">
+        </div>
+        <div class="story-content">
+          <h3>First Adventure</h3>
+          <p>From long drives to unexpected detours, every moment together became a story to cherish — proving that the best adventures are shared.</p>
+        </div>
+      </div>
+
+      <div class="story-item left">
+        <div class="story-content">
+          <h3>The Proposal</h3>
+          <p>Under a sky full of stars, a promise was made — to grow, to laugh, and to love each other through every season of life.</p>
+        </div>
+        <div class="story-img">
+          <img src="../img/page6.jpg" alt="The Proposal">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+<section id="gallery" class="section gallery-section">
+  <h2>Gallery</h2>
+  <p>Explore our favorite moments captured beautifully.</p>
+
+  <!-- Collage Layout -->
+  <div class="gallery-collage">
+    <div class="gallery-item tall"><img src="../img/page7.jpg" alt="Gallery 1"></div>
+    <div class="gallery-item wide"><img src="../img/page8.jpg" alt="Gallery 2"></div>
+    <div class="gallery-item"><img src="../img/page9.jpg" alt="Gallery 3"></div>
+    <div class="gallery-item"><img src="../img/page10.jpg" alt="Gallery 4"></div>
+    <div class="gallery-item tall"><img src="../img/page11.jpg" alt="Gallery 5"></div>
+    <div class="gallery-item wide"><img src="../img/page12.jpg" alt="Gallery 6"></div>
+  </div>
+
+  <!-- Slider Layout -->
+  <div class="gallery-slider">
+    <div class="gallery-slide"><img src="../img/page13.jpg" alt="Slider 1"></div>
+    <div class="gallery-slide"><img src="../img/page14.jpg" alt="Slider 2"></div>
+    <div class="gallery-slide"><img src="../img/page15.jpg" alt="Slider 3"></div>
+    <div class="gallery-slide"><img src="../img/page16.jpg" alt="Slider 4"></div>
+    <div class="gallery-slide"><img src="../img/page17.jpg" alt="Slider 5"></div>
+    <div class="gallery-slide"><img src="../img/page18.jpg" alt="Slider 6"></div>
+  </div>
+
+  <!-- Slider Controls -->
+  <div class="gallery-controls">
+    <button class="prev" aria-label="Previous Slide">❮</button>
+    <button class="next" aria-label="Next Slide">❯</button>
+  </div>
+</section>
+
+<!-- ===== LIGHTBOX (shared for story + gallery images) ===== -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Full View">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+<!-- ====== THE ENTOURAGE ====== -->
+<section class="entourage-section scroll-fade-in">
+  <h2>THE ENTOURAGE</h2>
+
+  <!-- Parents -->
+  <div class="two-col with-divider">
+    <!-- Right Side: Parents of the Groom -->
+    <div class="col-box right scroll-fade-in">
+      <h3>Parents of the Groom</h3>
+      <ul>
+        <li>Mr. Ceasar Tomas</li>
+        <li>Mrs. Rizalinda Tomas</li>
+      </ul>
+    </div>
+
+    <!-- Left Side: Parent of the Bride -->
+    <div class="col-box left scroll-fade-in">
+      <h3>Parent of the Bride</h3>
+      <ul>
+        <li>Mrs. Lorna Damatan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRINCIPAL SPONSORS ====== -->
+<section class="principal-sponsors-section scroll-fade-in">
+  <h2>PRINCIPAL SPONSORS</h2>
+  <p class="comment">TO STAND AS WITNESSES AS WE EXCHANGE OUR VOWS</p>
+
+  <div class="two-col with-divider">
+    <!-- Right Side -->
+    <div class="col-box right scroll-fade-in">
+      <ul>
+        <li>Mr. King Ulic Ulic</li>
+        <li>Ptr. Ferdinand Sese</li>
+        <li>Mr. Alexander Alesna</li>
+        <li>Mr. Conrad Bernachea</li>
+      </ul>
+    </div>
+
+    <!-- Left Side -->
+    <div class="col-box left scroll-fade-in">
+      <ul>
+        <li>Mrs. Princes Ulic Ulic</li>
+        <li>Mrs. Ma. Lourdes Sese</li>
+        <li>Mrs. Susan Alesna</li>
+        <li>Mrs. Noralyn Bernachea</li>
+        <li>Mrs. Estrellita Grullo</li>
+        <li>Mrs. Elena Peña</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECONDARY SPONSORS ====== -->
+<section class="secondary-sponsors-section scroll-fade-in">
+  <h2>SECONDARY SPONSORS</h2>
+
+  <!-- Candle -->
+  <div class="one-col">
+    <div class="col-box scroll-fade-in center">
+      <h3>CANDLE</h3>
+      <p class="comment">TO LIGHT OUR PATH TO RIGHTEOUSNESS</p>
+      <ul>
+        <li>Mr. King Ceasar Tomas</li>
+        <li>Ms. Edyelyn Vallestero</li>
+      </ul>
+    </div>
+  </div>
+<!-- Centered Comment -->
+  <p class="centered-comment scroll-fade-in"></p>
+  <!-- Veil & Cord -->
+  <div class="two-col with-divider">
+    <div class="col-box scroll-fade-in">
+      <h3>VEIL</h3>
+      <p class="comment">TO CLOTHE US IN LOVE</p>
+      <ul>
+        <li>Mr. Jomar Diñozo</li>
+        <li>Mrs. Cariza Diñozo</li>
+      </ul>
+    </div>
+
+    <div class="col-box scroll-fade-in">
+      <h3>CORD</h3>
+      <p class="comment">TO BIND US TOGETHER IN UNITY</p>
+      <ul>
+        <li>Mr. Monchito Grullo</li>
+        <li>Ms. Joelina Vallestero</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== THE ENTOURAGE (Best Men / Maid of Honor / Bridesmaids / Groomsmen) ====== -->
+<section class="entourage-section scroll-fade-in">
+  <h2>THE ENTOURAGE</h2>
+  <p class="comment">TO ASSIST US WITH OUR NEEDS</p>
+
+  <!-- Best Men / Maid of Honor -->
+  <div class="two-col with-divider">
+    <div class="col-box left scroll-fade-in">
+      <h3>BEST MEN</h3>
+      <ul>
+        <li>Mr. Jerold San Andres</li>
+        <li>Mr. Erickson San Andres</li>
+      </ul>
+    </div>
+
+    <div class="col-box right scroll-fade-in">
+      <h3>MAID OF HONOR</h3>
+      <ul>
+        <li>Ms. Lorena Damatan</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Centered Comment -->
+  <p class="centered-comment scroll-fade-in">TO GUIDE US ON OUR WAY</p>
+
+  <!-- Groomsmen / Bridesmaids -->
+  <div class="two-col with-divider">
+    <div class="col-box left scroll-fade-in">
+      <h3>GROOMSMEN</h3>
+      <ul>
+        <li>Mr. Brandon James Damatan</li>
+        <li>Mr. Kenneth Nagsuban</li>
+        <li>Mr. Ronnel Garcia</li>
+        <li>Mr. John Resty Ramirez</li>
+        <li>Mr. Ariel Callueng</li>
+        <li>Mr. Jellener Jhordan Pugao</li>
+      </ul>
+    </div>
+
+    <div class="col-box right scroll-fade-in">
+      <h3>BRIDESMAIDS</h3>
+      <ul>
+        <li>Ms. Sabrina Phoelix Francisco</li>
+        <li>Ms. Xandria Cealin Lisondra</li>
+        <li>Ms. Blessie Jane Damatan</li>
+        <li>Ms. Desiree Medina</li>
+        <li>Ms. Dhaisy Pangan</li>
+        <li>Ms. Jayzel Teodoro</li>
+        <li>Ms. Jeraldine Astorga</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Little Bridesmaids - Centered -->
+  <div class="one-col">
+    <div class="col-box scroll-fade-in center">
+      <h3>LITTLE BRIDESMAIDS</h3>
+      <ul>
+        <li>Zydney Martinez</li>
+        <li>Alyzah Camille Dalisay</li>
+        <li>Rhizcea Jhendielyn Tomas</li>
+        <li>Athena Rheanne Lisondra</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SPECIAL BEARERS & FLOWER GIRLS ====== -->
+<section class="entourage-section scroll-fade-in">
+  <h2>SPECIAL BEARERS & FLOWER GIRLS</h2>
+
+  <!-- Ring Bearer - Centered -->
+  <div class="one-col">
+    <div class="col-box scroll-fade-in center">
+      <h3>RING BEARER</h3>
+      <p class="comment">TO CARRY OUR SYMBOL OF LOVE</p>
+      <ul>
+        <li>Ronjay Vallesteros</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Centered Comment -->
+  <p class="centered-comment scroll-fade-in"></p>
+
+  <!-- Bible Bearer (Left) / Coin Bearer (Right) -->
+  <div class="two-col with-divider">
+    <div class="col-box left scroll-fade-in">
+      <h3>BIBLE BEARER</h3>
+      <p class="comment">TO CARRY OUR SYMBOL OF FAITH</p>
+      <ul>
+        <li>Dwayne Cisco San Juan</li>
+      </ul>
+    </div>
+
+    <div class="col-box right scroll-fade-in">
+      <h3>COIN BEARER</h3>
+      <p class="comment">TO CARRY OUR SYMBOL OF TREASURES</p>
+      <ul>
+        <li>Dicekhe Ceasar Tomas</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Banner Bearer - Centered -->
+  <div class="one-col">
+    <div class="col-box scroll-fade-in center">
+      <h3>BANNER BEARER</h3>
+      <p class="comment">TO CARRY THE BANNER</p>
+      <ul>
+        <li>Rex Liam Leoder</li>
+      </ul>
+    </div>
+  </div>
+<!-- Centered Comment -->
+  <p class="centered-comment scroll-fade-in"></p>
+  <!-- Flower Girls - Centered -->
+  <div class="one-col">
+    <div class="col-box scroll-fade-in center">
+      <h3>FLOWER GIRLS</h3>
+      <ul>
+        <li>Rhamizelle Jade Dalisay</li>
+        <li>Ramielle Cassandra Dalisay</li>
+        <li>Beatrize Janna Damatan</li>
+        <li>Ziah Martinez</li>
+        <li>Eliyah Gracelle Ulic Ulic</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WISHES SECTION ===== -->
+<section id="wishes" class="section wishes-section">
+  <h2>Wishes</h2>
+  <p class="wishes-intro">Share your love and warm wishes for the couple 💌</p>
+
+  <!-- Button to open modal -->
+  <button id="openWishModal" class="open-wish-btn">💫 Leave a Wish</button>
+
+  <!-- Wishes Display -->
+  <div class="wishes-container" id="wishesContainer">
+    <!-- Wishes will appear here dynamically -->
+  </div>
+
+  <!-- ===== Modal Form ===== -->
+  <div id="wishModal" class="wish-modal">
+  <div class="wish-modal-content">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <h3>💌 Send Your Wish</h3>
+    <form id="wishForm" class="wish-form">
+      <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+      <textarea id="message" name="message" placeholder="Write your wish..." required></textarea>
+      <button type="submit">Send Wish 💖</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<!-- ===== VENUE SECTION ===== -->
+<section id="venue" class="section venue-section glass-section">
+  <h2>Our Wedding Venue</h2>
+  <p class="venue-intro">Join us at this special place where our love story continues 💖</p>
+
+  <div class="venue-details">
+    <p><strong>Venue:</strong> Simple Restaurant and Events</p>
+    <p><strong>Address:</strong> Lot 4677B, M.H. Del Pilar St, Tanay, 1980 Rizal</p>
+    <p><strong>Date & Time:</strong> December 27, 2025 | 2:30 PM</p>
+  </div>
+
+  <div class="venue-map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241.40970035563464!2d121.28171051298544!3d14.510204879246624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397eb6588e40e5d%3A0xe253bb1112a68857!2sSimpl%C3%A9%20Restaurant!5e0!3m2!1sen!2sph!4v1761636113917!5m2!1sen!2sph"
+      width="100%" 
+      height="350" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo Text -->
+    <div class="footer-logo">
+      Victor<span>&</span>Analyka
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      &copy; 2025 Victor & Analyka. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="/loading.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDxLwAEK58g8AcDA7eUx1BJcj4on68wTGY",
+    authDomain: "victor-analyka-wishes.firebaseapp.com",
+    databaseURL: "https://victor-analyka-wishes-default-rtdb.firebaseio.com",
+    projectId: "victor-analyka-wishes",
+    storageBucket: "victor-analyka-wishes.firebasestorage.app",
+    messagingSenderId: "445145977402",
+    appId: "1:445145977402:web:9eeb6dc47a5be691a9b03",
+    measurementId: "G-KJL90XBCBH"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // ===== Wishes Feature =====
+  const openModalBtn = document.getElementById('openWishModal');
+  const modal = document.getElementById('wishModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const wishForm = document.getElementById('wishForm');
+  const wishesContainer = document.getElementById('wishesContainer');
+
+  openModalBtn.addEventListener('click', () => modal.style.display = 'flex');
+  closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+  const wishesRef = ref(db, 'wishes');
+
+  // ===== Listen & Render Wishes with Heart Buttons =====
+  onValue(wishesRef, (snapshot) => {
+    const data = snapshot.val();
+    wishesContainer.innerHTML = '';
+    if (!data) {
+      wishesContainer.innerHTML = `<p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>`;
+      return;
+    }
+
+    const wishesArray = Object.entries(data).reverse(); // [ [id, wish], ... ]
+    
+    wishesArray.forEach(([id, wish]) => {
+      const card = document.createElement('div');
+      card.classList.add('wish-card');
+      card.innerHTML = `
+        <div class="wish-header">
+          <div class="wish-avatar-placeholder">💫</div>
+          <h3 class="wish-name">${wish.fullName}</h3>
+          <button class="heart-btn" aria-label="Like Wish">❤️ <span class="like-count">${wish.likes || 0}</span></button>
+        </div>
+        <p class="wish-message">“${wish.message}”</p>
+      `;
+      wishesContainer.appendChild(card);
+
+      // Heart button click
+      const heartBtn = card.querySelector('.heart-btn');
+      const likeCountSpan = card.querySelector('.like-count');
+
+      heartBtn.addEventListener('click', () => {
+        const wishRef = ref(db, 'wishes/' + id);
+        const newLikes = (wish.likes || 0) + 1;
+
+        // Optimistically update UI
+        likeCountSpan.textContent = newLikes;
+
+        update(wishRef, { likes: newLikes });
+      });
+    });
+  });
+
+  // Handle new wish submission
+  wishForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fullName = document.getElementById('fullName').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!fullName || !message) return alert('Please fill out both fields.');
+
+    push(wishesRef, {
+      fullName,
+      message,
+      timestamp: Date.now(),
+      likes: 0
+    });
+
+    wishForm.reset();
+    modal.style.display = 'none';
+  });
+</script>

@@ -1,0 +1,93 @@
+/* ===== Lightbox (Click to View Image) ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.lightbox .close:hover {
+  color: #f28c38;
+}
+
+.lightbox button.prev,
+.lightbox button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.lightbox button.prev:hover,
+.lightbox button.next:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox button.prev {
+  left: 20px;
+}
+
+.lightbox button.next {
+  right: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Mobile Swipe Enhancement ===== */
+@media (max-width: 768px) {
+  .gallery-slider {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-slide {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+  }
+
+  .gallery-controls {
+    display: none; /* Hide buttons on small devices for swipe use */
+  }
+}

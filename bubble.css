@@ -1,0 +1,31 @@
+/* Default Light Mode */
+:root {
+  --bubble-bg-start: #003366; /* deep blue */
+  --bubble-bg-end: #87cefa;   /* sky blue */
+}
+
+body {
+  background: var(--bubble-bg-start);
+}
+
+#bubbleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;             /* Behind all content */
+  pointer-events: none;    /* Allow clicks through canvas */
+  background: linear-gradient(
+    180deg,
+    var(--bubble-bg-start) 0%,
+    var(--bubble-bg-end) 100%
+  );
+  transition: background 0.5s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --bubble-bg-start: #0a0a0a;   /* dark charcoal */
+  --bubble-bg-end: #222222;     /* lighter charcoal */
+}
