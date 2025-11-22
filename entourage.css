@@ -48,7 +48,7 @@
 /* ===== Comments ===== */
 .comment,
 .centered-comment {
-  font-style: italic;
+  font-style: normal;
   font-family: "Meow Script", cursive; /* Elegant wedding-style font */
   color: #333;
   opacity: 0.9;
