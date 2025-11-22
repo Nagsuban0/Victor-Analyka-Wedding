@@ -391,6 +391,55 @@
   color: #eee; /* Light gray paragraph text */
 }
 
+/* ===== Story Images Heartbeat + Float + Bounce ===== */
+.story-img img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  /* Initial fade + float + bounce + heartbeat */
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation:
+    floatUp 1.2s ease forwards,
+    bounceLoop 2.5s ease-in-out 1.2s infinite alternate,
+    heartBeat 3s ease-in-out 1.4s infinite;
+
+  animation-delay: var(--delay, 0s); /* optional stagger if needed */
+}
+
+/* Smooth initial rise */
+@keyframes floatUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 Infinite bounce */
+@keyframes bounceLoop {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-12px); }
+  55%  { transform: translateY(0); }
+  75%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* ❤️ Heartbeat pulse */
+@keyframes heartBeat {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.08); }
+  35%  { transform: scale(1); }
+  55%  { transform: scale(1.05); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+
 
 /* ===== GALLERY SECTION ===== */
 .gallery-section {
