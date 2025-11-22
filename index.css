@@ -63,7 +63,7 @@ body.dark-mode .logo {
 }
 
 body.dark-mode .logo span {
-  color: #fff; /* or any contrasting color */
+  color: #1e90ff; /* or any contrasting color */
 }
 
 /* ====== Navbar ====== */
@@ -120,7 +120,7 @@ body {
 .logo {
   font-family: "Great Vibes", cursive;
   font-size: 2rem;
-  color:  #003366;
+  color:  #1e90ff;
   font-weight: 500;
   letter-spacing: 1px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.3);
