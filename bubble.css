@@ -1,7 +1,7 @@
 /* Default Light Mode */
 :root {
-  --bubble-bg-start: #003366; /* deep blue */
-  --bubble-bg-end: #87cefa;   /* sky blue */
+  --bubble-bg-start: #abd1f8; /* deep blue */
+  --bubble-bg-end: #37aef8;   /* sky blue */
 }
 
 body {
