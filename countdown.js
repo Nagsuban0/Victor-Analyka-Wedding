@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const eventDate = new Date("2025-11-22T22:36:00").getTime();
+  const eventDate = new Date("2025-12-27T15:00:00").getTime();
   const countdownSection = document.querySelector('.countdown-section');
 
   function updateCountdown() {
