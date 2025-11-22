@@ -295,6 +295,9 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: relative;
   overflow: hidden;
+
+  /* ❤️ Constant Heartbeat */
+  animation: heartBeatButton 2.2s ease-in-out infinite;
 }
 
 .heart-btn:hover {
@@ -303,7 +306,7 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-/* Heart icon animation */
+/* Heart icon animation when clicked */
 .heart-btn.hearted span {
   animation: pop-heart 0.3s forwards;
 }
@@ -314,9 +317,70 @@
   100% { transform: scale(1); color: #ff4b5c; }
 }
 
+/* ❤️ Constant Heartbeat keyframes */
+@keyframes heartBeatButton {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.08); }
+  35%  { transform: scale(1); }
+  55%  { transform: scale(1.05); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
 /* Heart count */
 .heart-btn .like-count {
   font-weight: bold;
   color: #ff4b5c;
 }
 
+/* ================== ALERT ================== */
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(255, 255, 255, 0.95);
+  color: #003366;
+  font-family: "Meow Script", cursive;
+  font-size: 1.1rem;
+  padding: 20px 30px;
+  border-radius: 25px;
+  border: 2px solid rgba(0, 51, 102, 0.7);
+  box-shadow: 0 8px 35px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.custom-alert.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  animation: heartbeat 0.6s ease-in-out;
+}
+
+.custom-alert.success {
+  border-color: rgba(47, 139, 243, 0.9);
+  background: rgba(47, 139, 243, 0.1);
+  color: #2f8bf3;
+}
+
+.custom-alert.error {
+  border-color: rgba(255, 75, 92, 0.9);
+  background: rgba(255, 75, 92, 0.1);
+  color: #ff4b5c;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  25% { transform: translate(-50%, -50%) scale(1.1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  75% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Dark mode alert */
+.dark-mode .custom-alert {
+  background: rgba(0,0,0,0.85);
+  color: #ffd966;
+  border-color: #ffd966;
+}

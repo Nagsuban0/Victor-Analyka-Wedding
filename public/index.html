@@ -444,6 +444,11 @@
     </form>
   </div>
 </div>
+
+<!-- Custom Alert -->
+<div id="customAlert" class="custom-alert">
+  <p id="alertMessage"></p>
+</div>
 </section>
 
 <!-- ===== VENUE SECTION ===== -->
@@ -470,6 +475,8 @@
   </div>
 </section>
 
+
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-container">
@@ -489,7 +496,8 @@
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
   import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
-
+  
+  // ===== Firebase Setup =====
   const firebaseConfig = {
     apiKey: "AIzaSyDxLwAEK58g8AcDA7eUx1BJcj4on68wTGY",
     authDomain: "victor-analyka-wishes.firebaseapp.com",
@@ -500,37 +508,50 @@
     appId: "1:445145977402:web:9eeb6dc47a5be691a9b03",
     measurementId: "G-KJL90XBCBH"
   };
-
+  
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
-
-  // ===== Wishes Feature =====
+  
+  // ===== Elements =====
   const openModalBtn = document.getElementById('openWishModal');
   const modal = document.getElementById('wishModal');
   const closeModalBtn = document.getElementById('closeModal');
   const wishForm = document.getElementById('wishForm');
   const wishesContainer = document.getElementById('wishesContainer');
-
-  openModalBtn.addEventListener('click', () => modal.style.display = 'flex');
-  closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
-  window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-
   const wishesRef = ref(db, 'wishes');
-
-  // ===== Listen & Render Wishes with Heart Buttons =====
-  onValue(wishesRef, (snapshot) => {
-    const data = snapshot.val();
+  
+  // ===== Custom Alert =====
+  function showAlert(message, type = 'success', duration = 2500) {
+    const alertBox = document.getElementById('customAlert');
+    const alertMessage = document.getElementById('alertMessage');
+    if (!alertBox || !alertMessage) return;
+  
+    alertMessage.textContent = message;
+    alertBox.classList.remove('success', 'error');
+    alertBox.classList.add('show', type);
+  
+    setTimeout(() => {
+      alertBox.classList.remove('show', type);
+    }, duration);
+  }
+  
+  // ===== Modal Open/Close =====
+  openModalBtn?.addEventListener('click', () => modal.style.display = 'flex');
+  closeModalBtn?.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+  
+  // ===== Render Wishes =====
+  function renderWishes(data) {
     wishesContainer.innerHTML = '';
     if (!data) {
       wishesContainer.innerHTML = `<p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>`;
       return;
     }
-
-    const wishesArray = Object.entries(data).reverse(); // [ [id, wish], ... ]
-    
+  
+    const wishesArray = Object.entries(data).reverse(); // newest first
     wishesArray.forEach(([id, wish]) => {
       const card = document.createElement('div');
-      card.classList.add('wish-card');
+      card.className = 'wish-card';
       card.innerHTML = `
         <div class="wish-header">
           <div class="wish-avatar-placeholder">💫</div>
@@ -540,39 +561,45 @@
         <p class="wish-message">“${wish.message}”</p>
       `;
       wishesContainer.appendChild(card);
-
-      // Heart button click
+  
+      // Heart button
       const heartBtn = card.querySelector('.heart-btn');
-      const likeCountSpan = card.querySelector('.like-count');
-
+      const likeCount = card.querySelector('.like-count');
       heartBtn.addEventListener('click', () => {
-        const wishRef = ref(db, 'wishes/' + id);
         const newLikes = (wish.likes || 0) + 1;
-
-        // Optimistically update UI
-        likeCountSpan.textContent = newLikes;
-
-        update(wishRef, { likes: newLikes });
+        update(ref(db, 'wishes/' + id), { likes: newLikes });
+        likeCount.textContent = newLikes;
+        wish.likes = newLikes; // update local data
       });
     });
+  }
+  
+  // ===== Listen for Firebase Changes =====
+  onValue(wishesRef, snapshot => {
+    renderWishes(snapshot.val());
   });
-
-  // Handle new wish submission
-  wishForm.addEventListener('submit', (e) => {
+  
+  // ===== Handle New Wish =====
+  wishForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const fullName = document.getElementById('fullName').value.trim();
     const message = document.getElementById('message').value.trim();
-
-    if (!fullName || !message) return alert('Please fill out both fields.');
-
+  
+    if (!fullName || !message) {
+      showAlert('Please fill out both fields.', 'error');
+      return;
+    }
+  
     push(wishesRef, {
       fullName,
       message,
-      timestamp: Date.now(),
-      likes: 0
+      likes: 0,
+      timestamp: Date.now()
     });
-
+  
     wishForm.reset();
     modal.style.display = 'none';
+    showAlert('Your wish has been sent! 🎉', 'success');
   });
-</script>
+  </script>
+  

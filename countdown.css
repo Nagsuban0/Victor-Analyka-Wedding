@@ -112,3 +112,79 @@
     font-size: 0.7rem;
   }
 }
+
+/* Wedding-Gallery of JS */
+.wedding-gallery {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.wedding-gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  /* Animate in this order:
+      1) Fade + float up
+      2) Bounce forever (alternate)
+      3) Heartbeat pulse forever
+  */
+
+  animation:
+    floatUp 1.2s ease forwards,
+    bounceLoop 2.5s ease-in-out 1.4s infinite alternate,
+    heartBeat 3s ease-in-out 1.4s infinite;
+
+  /* JS will set custom stagger delay: --delay */
+  animation-delay: var(--delay);
+
+  border: 3px solid rgba(255,255,255,0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* Fade-in container */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Smooth initial rise */
+@keyframes floatUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 Infinite bounce + alternate direction */
+@keyframes bounceLoop {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-12px); }
+  55%  { transform: translateY(0); }
+  75%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* ❤️ Heartbeat effect */
+@keyframes heartBeat {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.08); }
+  35%  { transform: scale(1); }
+  55%  { transform: scale(1.05); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+/* Dark mode gallery */
+.dark-mode .wedding-gallery img {
+  border-color: rgba(255,179,71,0.9);
+  box-shadow: 0 10px 35px rgba(47,139,243,0.6);
+}

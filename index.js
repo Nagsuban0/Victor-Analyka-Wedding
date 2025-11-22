@@ -170,63 +170,86 @@ function closeModal() {
   setTimeout(() => (modal.style.display = "none"), 200);
 }
 
-// Handle form submission
-wishForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
+// // Handle form submission
+// wishForm?.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  const fullName = document.getElementById("fullName").value.trim();
-  const message = document.getElementById("message").value.trim();
+//   const fullName = document.getElementById("fullName").value.trim();
+//   const message = document.getElementById("message").value.trim();
 
-  if (!fullName || !message) return alert("Please fill out both fields.");
+//   if (!fullName || !message) {
+//     showAlert('Please fill out both fields.');
+//     return;
+//   }
 
-  const newWish = {
-    id: Date.now(),
-    fullName,
-    message,
-  };
+//   const newWish = {
+//     id: Date.now(),
+//     fullName,
+//     message,
+//   };
 
-  // Add to list
-  savedWishes.unshift(newWish);
-  localStorage.setItem("wishes", JSON.stringify(savedWishes));
+//   // This is fuction of alert message find the css on wish.css
+//   function showAlert(message, type = 'error', duration = 2500) {
+//     const alertBox = document.getElementById('customAlert');
+//     const alertMessage = document.getElementById('alertMessage');
+  
+//     alertMessage.textContent = message;
+  
+//     // Remove old classes
+//     alertBox.classList.remove('error', 'success');
+  
+//     // Add new class
+//     alertBox.classList.add('show', type);
+  
+//     setTimeout(() => {
+//       alertBox.classList.remove('show', type);
+//     }, duration);
+//   }
+  
+  
 
-  renderWishes(savedWishes);
+//   // Add to list
+//   savedWishes.unshift(newWish);
+//   localStorage.setItem("wishes", JSON.stringify(savedWishes));
 
-  // Reset form + close modal
-  wishForm.reset();
-  closeModal();
-});
+//   renderWishes(savedWishes);
 
-// Render all wishes
-function renderWishes(wishes) {
-  wishesContainer.innerHTML = "";
+//   // Reset form + close modal
+//   wishForm.reset();
+//   closeModal();
+// });
 
-  if (wishes.length === 0) {
-    wishesContainer.innerHTML = `
-      <p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>
-    `;
-    return;
-  }
+// // Render all wishes
+// function renderWishes(wishes) {
+//   wishesContainer.innerHTML = "";
 
-  wishes.forEach((wish, index) => {
-    const card = document.createElement("div");
-    card.className = "wish-card fade-in";
+//   if (wishes.length === 0) {
+//     wishesContainer.innerHTML = `
+//       <p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>
+//     `;
+//     return;
+//   }
 
-    card.innerHTML = `
-      <div class="wish-header">
-        <div class="wish-avatar-placeholder">💫</div>
-        <h3 class="wish-name">${wish.fullName}</h3>
-      </div>
-      <p class="wish-message">“${wish.message}”</p>
-    `;
+//   wishes.forEach((wish, index) => {
+//     const card = document.createElement("div");
+//     card.className = "wish-card fade-in";
 
-    wishesContainer.appendChild(card);
+//     card.innerHTML = `
+//       <div class="wish-header">
+//         <div class="wish-avatar-placeholder">💫</div>
+//         <h3 class="wish-name">${wish.fullName}</h3>
+//       </div>
+//       <p class="wish-message">“${wish.message}”</p>
+//     `;
 
-    // Stagger animation
-    setTimeout(() => {
-      card.classList.add("show");
-    }, index * 80);
-  });
-}
+//     wishesContainer.appendChild(card);
+
+//     // Stagger animation
+//     setTimeout(() => {
+//       card.classList.add("show");
+//     }, index * 80);
+//   });
+// }
 // ====== SCROLL FADE-IN ANIMATION ======
   const scrollFadeElements = document.querySelectorAll('.scroll-fade-in');
 
@@ -246,6 +269,7 @@ function renderWishes(wishes) {
 
   window.addEventListener('scroll', handleScrollFade);
   window.addEventListener('load', handleScrollFade);
+  
   
   });
   
