@@ -286,13 +286,13 @@
   font-size: 1rem;
   border: none;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(250, 0, 0, 0.15);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 2, 2, 0.35);
   color: #ff4b5c;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
 
@@ -302,8 +302,21 @@
 
 .heart-btn:hover {
   transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  background: rgba(230, 228, 228, 0.25);
+  box-shadow: 0 6px 20px rgb(245, 2, 2);
+}
+
+/* Dark mode variant */
+body.dark-mode .heart-btn {
+  background: rgba(255, 100, 100, 0.15);
+  border: 1px solid rgba(255, 100, 100, 0.35);
+  color: #ff7a7a;
+  box-shadow: 0 4px 12px rgba(255, 100, 100, 0.15);
+}
+
+body.dark-mode .heart-btn:hover {
+  background: rgba(255, 120, 120, 0.25);
+  box-shadow: 0 6px 20px rgba(255, 80, 80, 0.6);
 }
 
 /* Heart icon animation when clicked */
@@ -332,6 +345,12 @@
   font-weight: bold;
   color: #ff4b5c;
 }
+
+/* Dark mode heart count */
+body.dark-mode .heart-btn .like-count {
+  color: #ff7a7a;
+}
+
 
 /* ================== ALERT ================== */
 .custom-alert {

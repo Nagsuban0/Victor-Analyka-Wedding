@@ -170,86 +170,86 @@ function closeModal() {
   setTimeout(() => (modal.style.display = "none"), 200);
 }
 
-// // Handle form submission
-// wishForm?.addEventListener("submit", (e) => {
-//   e.preventDefault();
+// Handle form submission
+wishForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-//   const fullName = document.getElementById("fullName").value.trim();
-//   const message = document.getElementById("message").value.trim();
+  const fullName = document.getElementById("fullName").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-//   if (!fullName || !message) {
-//     showAlert('Please fill out both fields.');
-//     return;
-//   }
+  if (!fullName || !message) {
+    showAlert('Please fill out both fields.');
+    return;
+  }
 
-//   const newWish = {
-//     id: Date.now(),
-//     fullName,
-//     message,
-//   };
+  const newWish = {
+    id: Date.now(),
+    fullName,
+    message,
+  };
 
-//   // This is fuction of alert message find the css on wish.css
-//   function showAlert(message, type = 'error', duration = 2500) {
-//     const alertBox = document.getElementById('customAlert');
-//     const alertMessage = document.getElementById('alertMessage');
+  // This is fuction of alert message find the css on wish.css
+  // function showAlert(message, type = 'error', duration = 2500) {
+  //   const alertBox = document.getElementById('customAlert');
+  //   const alertMessage = document.getElementById('alertMessage');
   
-//     alertMessage.textContent = message;
+  //   alertMessage.textContent = message;
   
-//     // Remove old classes
-//     alertBox.classList.remove('error', 'success');
+  //   // Remove old classes
+  //   alertBox.classList.remove('error', 'success');
   
-//     // Add new class
-//     alertBox.classList.add('show', type);
+  //   // Add new class
+  //   alertBox.classList.add('show', type);
   
-//     setTimeout(() => {
-//       alertBox.classList.remove('show', type);
-//     }, duration);
-//   }
+  //   setTimeout(() => {
+  //     alertBox.classList.remove('show', type);
+  //   }, duration);
+  // }
   
   
 
-//   // Add to list
-//   savedWishes.unshift(newWish);
-//   localStorage.setItem("wishes", JSON.stringify(savedWishes));
+  // Add to list
+  savedWishes.unshift(newWish);
+  localStorage.setItem("wishes", JSON.stringify(savedWishes));
 
-//   renderWishes(savedWishes);
+  renderWishes(savedWishes);
 
-//   // Reset form + close modal
-//   wishForm.reset();
-//   closeModal();
-// });
+  // Reset form + close modal
+  wishForm.reset();
+  closeModal();
+});
 
-// // Render all wishes
-// function renderWishes(wishes) {
-//   wishesContainer.innerHTML = "";
+// Render all wishes
+function renderWishes(wishes) {
+  wishesContainer.innerHTML = "";
 
-//   if (wishes.length === 0) {
-//     wishesContainer.innerHTML = `
-//       <p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>
-//     `;
-//     return;
-//   }
+  if (wishes.length === 0) {
+    wishesContainer.innerHTML = `
+      <p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>
+    `;
+    return;
+  }
 
-//   wishes.forEach((wish, index) => {
-//     const card = document.createElement("div");
-//     card.className = "wish-card fade-in";
+  wishes.forEach((wish, index) => {
+    const card = document.createElement("div");
+    card.className = "wish-card fade-in";
 
-//     card.innerHTML = `
-//       <div class="wish-header">
-//         <div class="wish-avatar-placeholder">💫</div>
-//         <h3 class="wish-name">${wish.fullName}</h3>
-//       </div>
-//       <p class="wish-message">“${wish.message}”</p>
-//     `;
+    card.innerHTML = `
+      <div class="wish-header">
+        <div class="wish-avatar-placeholder">💫</div>
+        <h3 class="wish-name">${wish.fullName}</h3>
+      </div>
+      <p class="wish-message">“${wish.message}”</p>
+    `;
 
-//     wishesContainer.appendChild(card);
+    wishesContainer.appendChild(card);
 
-//     // Stagger animation
-//     setTimeout(() => {
-//       card.classList.add("show");
-//     }, index * 80);
-//   });
-// }
+    // Stagger animation
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 80);
+  });
+}
 // ====== SCROLL FADE-IN ANIMATION ======
   const scrollFadeElements = document.querySelectorAll('.scroll-fade-in');
 
