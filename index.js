@@ -225,7 +225,7 @@ function renderWishes(wishes) {
 
   if (wishes.length === 0) {
     wishesContainer.innerHTML = `
-      <p style="opacity:0.8;">No wishes yet 💌 Be the first to send one!</p>
+      <p style="opacity:0.8;">"No wishes yet 💌 Let’s shower our lovely couple with love—send your heartfelt wishes and make their day even more special!"</p>
     `;
     return;
   }
