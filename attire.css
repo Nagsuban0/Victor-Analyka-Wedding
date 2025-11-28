@@ -1,0 +1,178 @@
+/* ============================================
+   ATTIRE SECTION — GLASSY WEDDING STYLE
+   WITH DARK MODE SUPPORT
+=============================================== */
+
+.attire-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1100px;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Section Title */
+.attire-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Dark Mode */
+body.dark-mode .attire-section h2 {
+  color: rgba(255,179,71,0.9);
+  text-shadow: 0 4px 12px rgba(255,255,255,0.25);
+}
+
+/* Glassy container boxes */
+.attire-box,
+.gift-guide,
+.plus-one,
+.attire-notes {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.25);
+  max-width: 900px;
+  color: var(--text-dark);
+  transition: 0.3s ease;
+}
+
+body.dark-mode .attire-box,
+body.dark-mode .gift-guide,
+body.dark-mode .plus-one,
+body.dark-mode .attire-notes {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-light);
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+
+/* Section subtitles */
+.attire-box h3,
+.gift-guide h3,
+.plus-one h3,
+.attire-notes h3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .attire-box h3,
+body.dark-mode .gift-guide h3,
+body.dark-mode .plus-one h3,
+body.dark-mode .attire-notes h3 {
+  color: rgba(255,179,71,0.9); /* soft blue for dark mode */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Guest + Principal blocks */
+.attire-item {
+  margin-top: 2rem;
+}
+
+.attire-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+body.dark-mode .attire-item h4 {
+  color: var(--text-light);
+}
+
+/* Image styling */
+.attire-img {
+  margin: 1.2rem auto;
+  width: 100%;
+  max-width: 750px;
+}
+
+.attire-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.attire-img img:hover {
+  transform: scale(1.03);
+}
+
+body.dark-mode .attire-img img {
+  box-shadow: 0 4px 25px rgba(255,255,255,0.08);
+}
+
+/* Comments */
+.attire-comment {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.strict {
+  font-weight: bold;
+  color: #d9534f;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+body.dark-mode .strict {
+  color: #ff8b8b;
+  text-shadow: 0 0 6px rgba(255,80,80,0.4);
+}
+
+/* Additional Notes List */
+.attire-notes ul {
+  list-style: disc;
+  text-align: left;
+  max-width: 700px;
+  margin: auto;
+  padding-left: 1.7rem;
+  line-height: 1.7rem;
+}
+
+.attire-notes li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Fade-in animation */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .attire-section {
+    padding: 3rem 1rem;
+  }
+
+  .attire-box,
+  .gift-guide,
+  .plus-one,
+  .attire-notes {
+    padding: 1.5rem;
+  }
+
+  .attire-img img {
+    border-radius: 12px;
+  }
+}

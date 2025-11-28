@@ -16,7 +16,7 @@
 
 .countdown-section h2 {
   color: #003366;
-  font-family: "Meow Script", cursive;
+  font-family: "Great Vibes", cursive;
   font-size: clamp(2rem, 4vw, 2.8rem);
   margin-bottom: 30px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -42,14 +42,14 @@
 
 .time-box span {
   display: block;
-  font-family: "Meow Script", cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 1.6rem;
   color: #003366;
   margin-bottom: 3px;
 }
 
 .time-box p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Great Vibes", cursive;
   font-size: 0.8rem;
   color: #003366;
   margin: 0;
@@ -63,7 +63,7 @@
 
 /* Countdown finished message */
 .countdown-finished {
-  font-family: "Meow Script", cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 1.6rem;
   color: #003366;
   text-shadow: 0 2px 5px rgba(0,0,0,0.3);
