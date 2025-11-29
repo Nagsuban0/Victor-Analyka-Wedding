@@ -9,6 +9,7 @@
   max-width: 1100px;
   margin: auto;
   font-family: "Poppins", sans-serif;
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
 }
 
 /* Section Title */
@@ -51,7 +52,7 @@ body.dark-mode .attire-notes {
   background: rgba(0,0,0,0.35);
   border: 1px solid rgba(255,179,71,0.9);
   color: var(--text-light);
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
 }
 
 /* Section subtitles */
@@ -100,7 +101,7 @@ body.dark-mode .attire-item h4 {
   width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
   transition: 0.3s ease;
 }
 
@@ -109,7 +110,7 @@ body.dark-mode .attire-item h4 {
 }
 
 body.dark-mode .attire-img img {
-  box-shadow: 0 4px 25px rgba(255,255,255,0.08);
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
 }
 
 /* Comments */
@@ -178,94 +179,95 @@ body.dark-mode .strict {
 }
 
 
-/* ===== Glassy Background for Attire Social Media ===== */
+/* ===== Attire Social Media Section ===== */
 .attire-social-Media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
   max-width: 900px;
   margin: 2rem auto;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2); /* light glass effect */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
   transition: 0.3s ease, background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Dark Mode Glassy Effect */
 body.dark-mode .attire-social-Media {
-  background: rgba(0, 0, 0, 0.35); /* darker glass for dark mode */
+  background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255,179,71,0.9);
-  box-shadow: 0 8px 30px rgba(255,255,255,0.05);
+  box-shadow: 0 10px 40px rgba(255,255,255,0.05);
   color: var(--text-light);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .attire-social-Media {
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-  }
+/* Headings and paragraphs */
+.attire-social-Media h3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #003366;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-@media (max-width: 480px) {
-  .attire-social-Media {
-    padding: 1rem;
-    margin: 1rem auto;
-  }
+body.dark-mode .attire-social-Media h3 {
+  color: rgba(255,179,71,0.9);
 }
 
-/* Ensure social icons inside remain responsive */
-.attire-social-Media img,
-.attire-social-Media .social-icon {
-  margin: 0.5rem;
+.attire-social-Media p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+  max-width: 600px;
+  text-align: center;
 }
 
-/* Base styling for icons with glassy background */
+/* Social Icons Container */
+.attire-social-Media .social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center all icons */
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1.5rem; /* increased spacing between icons */
+}
+
+/* Social Icon Styling */
 .social-icon {
-  display: inline-block;
   width: 80px;
   height: 80px;
-  margin: 0.5rem;
-  background-size: contain; /* fit image */
-  background-repeat: no-repeat;
+  border-radius: 20px;
+  background-size: contain;
   background-position: center;
-  border-radius: 15px;
-  transition: transform 0.3s ease, filter 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  
-  /* Glassy background */
-  /* background-color: rgba(255, 255, 255, 0.2); */
-  /* backdrop-filter: blur(8px); */
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
 }
 
 .social-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
 }
 
-/* Light mode images */
+/* Light Mode Images */
 .social-icon.fb { background-image: url('../img/f2.png'); }
 .social-icon.ins { background-image: url('../img/ins.png'); }
 .social-icon.tiktok { background-image: url('../img/t2.png'); }
 
-/* Dark mode glassy background and images */
-/* body.dark-mode .social-icon {
-  background-color: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
-} */
-
+/* Dark Mode Images */
 body.dark-mode .social-icon.fb { background-image: url('../img/f1.png'); }
 body.dark-mode .social-icon.ins { background-image: url('../img/ins2.png'); }
 body.dark-mode .social-icon.tiktok { background-image: url('../img/t1.png'); }
 
-/* Responsive sizes */
+/* Responsive Sizes */
 @media (max-width: 768px) {
   .social-icon { width: 60px; height: 60px; }
+  .attire-social-Media .social-icons { gap: 1rem; }
 }
 
 @media (max-width: 480px) {
   .social-icon { width: 50px; height: 50px; }
+  .attire-social-Media .social-icons { gap: 0.8rem; }
 }
