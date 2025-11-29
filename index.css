@@ -1,13 +1,14 @@
 /* ====== CSS START ====== */
-:root {
-  --main-color: #1e90ff; /* Change this to your preferred color */
+/* :root {
+  --main-color: #1e90ff; /* Change this to your preferred color *
   --glass-bg: rgba(255,255,255,0.15);
   --dark-bg: rgba(0,0,0,0.3);
   --text-light: #fff;
   --text-dark: #111;
-}
+   --bg-image: url("./img/V&A.gif");
+} */
 
-body {
+ body {
   margin: 0;
   font-family: sans-serif;
   background: #eee;
@@ -15,16 +16,22 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
   /* Remove flex centering */
-  display: block; /* or just remove display:flex entirely */
+  display: block; /* or just remove display:flex entirely  */
   min-height: 100vh;
-}
+} 
 
 /* ===== Darkmode ======*/
 body.dark-mode {
-  background: #111;
+  background: #111; /* fallback color */
+  background-image: url("./img/V&A.gif"); /* your image */
+  background-size: cover;          /* make image cover the screen */
+  background-position: center center; /* center horizontally & vertically */
+  background-repeat: no-repeat;    /* prevent tiling */
+  background-attachment: fixed;    /* optional: keeps image fixed while scrolling */
   color: #eee;
   transition: background 0.5s ease, color 0.5s ease;
 }
+
 
 body.dark-mode .navbar {
   background: rgba(0,0,0,0.3);
@@ -63,7 +70,7 @@ body.dark-mode .logo {
 }
 
 body.dark-mode .logo span {
-  color: #1e90ff; /* or any contrasting color */
+  color: #1e90ff; /* contrasting color */
 }
 
 /* ====== Navbar ====== */

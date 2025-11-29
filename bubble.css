@@ -1,31 +1,48 @@
-/* Default Light Mode */
+/* Default Light Mode + Shared Background Image */
 :root {
   --bubble-bg-start: #abd1f8; /* deep blue */
   --bubble-bg-end: #37aef8;   /* sky blue */
+  --bg-image: url("./img/V&A.gif"); /* ⭐ Same image for both modes */
 }
 
+/* Body Background */
 body {
   background: var(--bubble-bg-start);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+/* Bubble Canvas Overlay */
 #bubbleCanvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;             /* Behind all content */
-  pointer-events: none;    /* Allow clicks through canvas */
+  z-index: -1;
+  pointer-events: none;
   background: linear-gradient(
     180deg,
     var(--bubble-bg-start) 0%,
     var(--bubble-bg-end) 100%
   );
-  transition: background 0.5s ease;
+  opacity: 0.55;
+  transition: background 0.5s ease, opacity 0.5s ease;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  --bubble-bg-start: #0a0a0a;   /* dark charcoal */
-  --bubble-bg-end: #222222;     /* lighter charcoal */
+/* Dark Mode Only Changes the Gradient (NOT the image) */
+:root.dark-mode {
+  --bubble-bg-start: #0a0a0a; /* dark charcoal */
+  --bubble-bg-end: #222222;   /* lighter charcoal */
+  /* ❌ no --bg-image override (same image is kept) */
 }
+
+/* Optional darker overlay */
+body.dark-mode #bubbleCanvas {
+  opacity: 0.35;
+}
+
+
