@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <img src="../img/page2.jpg" alt="Wedding Photo 2">
           <img src="../img/page3.jpg" alt="Wedding Photo 3">
           <img src="../img/page5.jpg" alt="Wedding Photo 4">
+          <img src="../img/page6.jpg" alt="Wedding Photo 5">
         </div>
       `;
       clearInterval(countdownInterval);
