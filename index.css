@@ -120,7 +120,7 @@ body {
 .logo {
   font-family: "Great Vibes", cursive;
   font-size: 2rem;
-  color:  #1e90ff;
+  color:  #003366;
   font-weight: 500;
   letter-spacing: 1px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.3);
@@ -146,7 +146,7 @@ body {
   color: #f28c38;
 }
 
-/* === Humburger Navbar === */
+/* === HAMBURGER NAVBAR (ENHANCED + DARK MODE SUPPORT) === */
 .hamburger {
   cursor: pointer;
   display: none;
@@ -154,18 +154,25 @@ body {
   gap: 5px;
   background: none;
   border: none;
-  z-index: 1001;
+  z-index: 1200;
+  padding: 5px;
 }
 
 .hamburger span {
   display: block;
-  width: 25px;
+  width: 26px;
   height: 3px;
-  background-color: #fff;
+  background-color: #003366; /* default color */
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
+/* Dark Mode hamburger bars */
+body.dark-mode .hamburger span {
+  background-color: #f28c38;
+}
+
+/* OPEN STATE (turn into X) */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
@@ -176,24 +183,58 @@ body {
   transform: rotate(-45deg) translateY(-8px);
 }
 
+/* === MOBILE MENU DROPDOWN === */
 @media (max-width: 768px) {
+
   .hamburger {
     display: flex;
   }
 
   .nav-links {
     display: none;
+    flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 0;
-    background: rgba(0,0,0,0.8); /* dark background for mobile menu */
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    right: 20px;
+    width: 220px;
+    padding: 1.3rem;
+    gap: 1.3rem;
+    border-radius: 15px;
+
+    /* Light mode glass dropdown */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
   }
 
+  /* Dark mode glass dropdown */
+  body.dark-mode .nav-links {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  }
+
+  /* DROPDOWN OPEN */
   .nav-links.show {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    color: #003366;
+    font-size: 1.05rem;
+  }
+
+  body.dark-mode .nav-links a {
+    color: #fff;
+  }
+
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: #f28c38;
   }
 }

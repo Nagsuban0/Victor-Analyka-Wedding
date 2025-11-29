@@ -7,30 +7,27 @@
   margin: 60px auto;
   padding: 50px 25px;
 
-  /* ✨ Advanced Glass Effect */
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   border-radius: 30px;
-
-  /* ✨ Frosted border + soft gradient glow */
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 12px 55px rgba(0,0,0,0.25), inset 0 0 15px rgba(255,255,255,0.05);
 
-  text-align: center; /* Center all text by default */
+  text-align: center;
   transition: all 0.4s ease;
 
-  /* Hidden initially for scroll fade animation */
   opacity: 0;
   transform: translateY(30px);
 }
 
-/* Hover glow for extra luxury feel */
+/* Hover glow */
 .entourage-section:hover,
 .principal-sponsors-section:hover,
 .secondary-sponsors-section:hover {
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 18px 70px rgba(0,0,0,0.3), inset 0 0 25px rgba(255,255,255,0.07);
+  box-shadow: 0 18px 70px rgba(0,0,0,0.3),
+              inset 0 0 25px rgba(255,255,255,0.07);
   transform: translateY(-3px);
 }
 
@@ -49,12 +46,12 @@
 .comment,
 .centered-comment {
   font-style: normal;
-  font-family: "Meow Script", cursive; /* Elegant wedding-style font */
+  font-family: "Meow Script", cursive;
   color: #333;
   opacity: 0.9;
   margin-bottom: 25px;
   font-size: 1.05rem;
-  text-align: center; /* Center all comments */
+  text-align: center;
 }
 
 /* ===== Column Layouts ===== */
@@ -66,81 +63,83 @@
   margin-bottom: 40px;
 }
 
-/* Glassy Column Cards */
+/* ===== Glassy Column Cards (UNIFIED for all boxes) ===== */
 .col-box {
   flex: 1;
   min-width: 260px;
   padding: 25px 20px;
 
-  /* ✨ Extra glass depth + gradient overlay */
   background: rgba(255,255,255,0.12);
   border-radius: 20px;
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15), inset 0 0 12px rgba(255,255,255,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15),
+              inset 0 0 12px rgba(255,255,255,0.08);
 
   transition: all 0.4s ease;
 
-  /* Hidden for scroll fade */
   opacity: 0;
   transform: translateY(20px);
 
-  text-align: center; /* Default center text inside boxes */
+  text-align: center;
 }
 
-/* Hover: brighten inner glow and lift slightly */
+/* Hover Effect */
 .col-box:hover {
   background: rgba(255,255,255,0.2);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2),
+              inset 0 0 20px rgba(255,255,255,0.12);
   transform: translateY(-2px);
 }
 
-/* One-column center box */
-.one-col .col-box.center {
-  max-width: 500px;
-  margin: 0 auto;
+/* One column center container */
+.one-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
-/* Column Titles */
+/* Titles inside boxes */
 .col-box h3 {
   color: #003366;
   margin-bottom: 15px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.25);
-  font-size: 1.5rem; /* Increased font size */
-  text-align: center; /* Center all H3 titles */
+  font-size: 1.5rem;
+  font-family: "Great Vibes", cursive;
+  text-align: center;
 }
 
 /* ===== Lists Styling ===== */
 .col-box ul {
-  list-style: none; /* Remove bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
-  font-family: "Meow Script", cursive; /* Elegant wedding-style font */
-  font-size: 1.25rem; /* Increased font size */
+  font-family: "Meow Script", cursive;
+  font-size: 1.25rem;
   color: #111;
   line-height: 1.7;
-  text-align: center; /* Center list items */
+  text-align: center;
 }
-
 
 .col-box ul li {
-  padding: 4px 0; /* Space between items */
+  padding: 4px 0;
   font-weight: 500;
-  position: relative;
 }
 
-/* Alignment helpers (use only if explicitly needed) */
+/* Alignment helpers */
 .col-box.right { text-align: right; }
 .col-box.left { text-align: left; }
 
-/* ===== DARK MODE GLASS ===== */
+/* ===== DARK MODE ===== */
 .dark-mode .entourage-section,
 .dark-mode .principal-sponsors-section,
 .dark-mode .secondary-sponsors-section {
   background: rgba(0,0,0,0.42);
   border-color: rgba(255,179,71,0.9);
-  box-shadow: 0 12px 55px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.03);
+  box-shadow: 0 12px 55px rgba(0,0,0,0.4),
+              inset 0 0 15px rgba(255,255,255,0.03);
 }
 
 .dark-mode .col-box {
@@ -160,7 +159,7 @@
   color: #ddd;
 }
 
-/* ===== SCROLLING FADE-IN ANIMATION ===== */
+/* ===== Scroll Animation ===== */
 .scroll-fade-in {
   opacity: 0;
   transform: translateY(20px);
