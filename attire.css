@@ -1,6 +1,7 @@
 /* ============================================
    ATTIRE SECTION — GLASSY WEDDING STYLE
    WITH DARK MODE SUPPORT
+   (Cross-browser compatible)
 =============================================== */
 
 .attire-section {
@@ -9,6 +10,7 @@
   max-width: 1100px;
   margin: auto;
   font-family: "Poppins", sans-serif;
+  /* Box-shadow works cross-browser */
   box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
 }
 
@@ -34,7 +36,8 @@ body.dark-mode .attire-section h2 {
 .gift-guide,
 .plus-one,
 .attire-notes {
-  background: var(--glass-bg);
+  background: var(--glass-bg, rgba(255,255,255,0.15));
+  -webkit-backdrop-filter: blur(2px); /* Safari */
   backdrop-filter: blur(2px);
   padding: 2rem;
   margin: 2rem auto;
@@ -42,7 +45,7 @@ body.dark-mode .attire-section h2 {
   border: 1px solid rgba(255,255,255,0.25);
   max-width: 900px;
   color: #003366;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .attire-box,
@@ -51,7 +54,7 @@ body.dark-mode .plus-one,
 body.dark-mode .attire-notes {
   background: rgba(0,0,0,0.35);
   border: 1px solid rgba(255,179,71,0.9);
-  color: var(--text-light);
+  color: var(--text-light, #fff);
   box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
 }
 
@@ -71,7 +74,7 @@ body.dark-mode .attire-box h3,
 body.dark-mode .gift-guide h3,
 body.dark-mode .plus-one h3,
 body.dark-mode .attire-notes h3 {
-  color: rgba(255,179,71,0.9); /* soft blue for dark mode */
+  color: rgba(255,179,71,0.9);
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
@@ -83,11 +86,11 @@ body.dark-mode .attire-notes h3 {
 .attire-item h4 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-dark, #003366);
 }
 
 body.dark-mode .attire-item h4 {
-  color: var(--text-light);
+  color: var(--text-light, #fff);
 }
 
 /* Image styling */
@@ -102,7 +105,7 @@ body.dark-mode .attire-item h4 {
   height: auto;
   border-radius: 15px;
   box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .attire-img img:hover {
@@ -178,7 +181,6 @@ body.dark-mode .strict {
   }
 }
 
-
 /* ===== Attire Social Media Section ===== */
 .attire-social-Media {
   display: flex;
@@ -190,17 +192,18 @@ body.dark-mode .strict {
   max-width: 900px;
   margin: 2rem auto;
   border-radius: 25px;
+  -webkit-backdrop-filter: blur(2px); /* Safari */
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 -6px 25px rgba(0,0,0,0.12);
-  transition: 0.3s ease, background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .attire-social-Media {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255,179,71,0.9);
   box-shadow: 0 10px 40px rgba(255,255,255,0.05);
-  color: var(--text-light);
+  color: var(--text-light, #fff);
 }
 
 /* Headings and paragraphs */
@@ -228,10 +231,10 @@ body.dark-mode .attire-social-Media h3 {
 .attire-social-Media .social-icons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* center all icons */
+  justify-content: center;
   align-items: center;
   margin-top: 1rem;
-  gap: 1.5rem; /* increased spacing between icons */
+  gap: 1.5rem;
 }
 
 /* Social Icon Styling */
