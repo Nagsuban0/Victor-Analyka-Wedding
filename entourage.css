@@ -44,7 +44,7 @@
 .secondary-sponsors-section h2 {
   color: #003366;
   font-family: "Great Vibes", cursive, sans-serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* responsive across viewport widths */
   margin-bottom: 30px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
@@ -52,14 +52,14 @@
 /* ===== Comments ===== */
 .comment,
 .centered-comment {
-  font-style: normal;
   font-family: "Meow Script", cursive, sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: #333;
   opacity: 0.9;
   margin-bottom: 25px;
-  font-size: 1.05rem;
   text-align: center;
 }
+
 
 /* ===== Column Layouts ===== */
 .two-col {
@@ -93,6 +93,9 @@
   will-change: transform, opacity;
 
   text-align: center;
+
+  /* Add this line for responsive font */
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
 }
 
 /* Hover Effect */
@@ -113,30 +116,29 @@
 
 /* Titles inside boxes */
 .col-box h3 {
-  color: #003366;
-  margin-bottom: 15px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
-  font-size: 1.5rem;
   font-family: "Great Vibes", cursive, sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin-bottom: 15px;
   text-align: center;
+  color: #003366;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 
 /* ===== Lists Styling ===== */
 .col-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   font-family: "Meow Script", cursive, sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
   color: #111;
-  line-height: 1.7;
+  line-height: 1.6;
   text-align: center;
+  list-style: none;
 }
 
 .col-box ul li {
   padding: 4px 0;
   font-weight: 500;
 }
+
 
 /* Alignment helpers */
 .col-box.right { text-align: right; }
