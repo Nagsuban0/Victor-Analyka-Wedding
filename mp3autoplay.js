@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bgMusic');
-  
   if (!audio) return; // safety check
   
   audio.play().catch(() => {
