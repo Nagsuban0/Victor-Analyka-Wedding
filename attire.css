@@ -252,14 +252,14 @@ body.dark-mode .attire-social-Media h3 {
 }
 
 /* Light Mode Images */
-.social-icon.fb { background-image: url('../img/f2.png'); }
-.social-icon.ins { background-image: url('../img/ins.png'); }
-.social-icon.tiktok { background-image: url('../img/t2.png'); }
+.social-icon.fb { background-image: url('./img/f2.png'); }
+.social-icon.ins { background-image: url('./img/ins.png'); }
+.social-icon.tiktok { background-image: url('./img/t2.png'); }
 
 /* Dark Mode Images */
-body.dark-mode .social-icon.fb { background-image: url('../img/f1.png'); }
-body.dark-mode .social-icon.ins { background-image: url('../img/ins2.png'); }
-body.dark-mode .social-icon.tiktok { background-image: url('../img/t1.png'); }
+body.dark-mode .social-icon.fb { background-image: url('./img/f1.png'); }
+body.dark-mode .social-icon.ins { background-image: url('./img/ins2.png'); }
+body.dark-mode .social-icon.tiktok { background-image: url('./img/t1.png'); }
 
 /* Responsive Sizes */
 @media (max-width: 768px) {
