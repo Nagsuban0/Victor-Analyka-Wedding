@@ -1,0 +1,303 @@
+/* ===== EYESHOOT PHOTOGRAPHY ===== */
+.eyeshoot-section {
+  width: 85%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 90px 25px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  border-radius: 28px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  transition: all 0.5s ease;
+}
+
+/* Dark Mode */
+.dark-mode .eyeshoot-section {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(242,140,56,0.6);
+}
+
+.eyeshoot-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.dark-mode .eyeshoot-section h2 {
+  color: #f28c38;
+  text-shadow: 0 0 12px rgba(242,140,56,0.45);
+}
+
+.eyeshoot-section p {
+  color: #222;
+  font-size: 0.95rem;
+  margin-bottom: 45px;
+}
+
+.dark-mode .eyeshoot-section p {
+  color: #ddd;
+}
+
+.eyeshoot-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.dark-mode .eyeshoot-section h2 {
+  color: #f28c38;
+  text-shadow: 0 0 12px rgba(242,140,56,0.45);
+}
+
+.eyeshoot-section p {
+  color: #222;
+  font-size: 0.95rem;
+  margin-bottom: 45px;
+}
+
+.dark-mode .eyeshoot-section p {
+  color: #ddd;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Gradient overlay */
+.gallery-item::after {
+     pointer-events: none; /* ← THIS FIXES EVERYTHING */
+  content: "View Photo";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #fff;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.1)
+  );
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
+
+.gallery-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 204, 0.9),
+    rgba(0, 51, 153, 0.9)
+  );
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+/* Hover Effect */
+.download-btn:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 130, 255, 1),
+    rgba(0, 80, 200, 1)
+  );
+}
+
+/* Active (Click) */
+.download-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Dark Mode */
+.dark-mode .download-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(242,140,56,0.95),
+    rgba(255,190,90,1)
+  );
+  color: #111;
+}
+
+.dark-mode .download-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255,190,90,1),
+    rgba(242,140,56,1)
+  );
+}
+
+/* Optional icon pulse */
+.download-btn::before {
+  content: "⬇";
+  font-size: 1rem;
+  animation: downloadPulse 1.6s infinite;
+}
+
+@keyframes downloadPulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.load-more-btn {
+  margin-top: 45px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0,51,102,0.9),
+    rgba(0,102,204,0.9)
+  );
+  color: #fff;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+}
+
+.load-more-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+.dark-mode .load-more-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(242,140,56,0.9),
+    rgba(255,180,90,0.95)
+  );
+  color: #111;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(4px);
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 75vh;
+  border-radius: 18px;
+
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8);
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .gallery-collage {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-auto-rows: 140px;
+  }
+
+  .lightbox-img {
+    max-height: 65vh;
+  }
+}
+
+.fb-btn {
+  text-decoration: none;
+  padding: 10px 130px;
+  border-radius: 14px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #1877f2,
+    #0d5bdd
+  );
+  color: #fff;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.fb-btn i {
+  font-size: 1rem;
+}
+
+.fb-btn:hover {
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+}

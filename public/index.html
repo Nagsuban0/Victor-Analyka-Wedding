@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../countdown.css">
   <link rel="stylesheet" href="../attire.css">
   <link rel="stylesheet" href="../bubble.css">
+  <link rel="stylesheet" href="../photoboot.css">
   <script src="../countdown.js"></script>
   <script src="../index.js"></script>
   <script src="../bubble.js"></script>
@@ -189,6 +190,49 @@
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
+
+  <!-- ===== EYESHOOT PHOTOGRAPHY SECTION ===== -->
+<section id="eyeshoot" class="section eyeshoot-section">
+  <h2>Eyeshot Photography</h2>
+  <p>Explore the moments we've captured through the lens.</p>
+
+  <div class="gallery-collage" id="eyeshootGallery"></div>
+
+  <button id="loadMoreEyeshoot" class="load-more-btn">
+    See More Photos 📸
+  </button>
+
+  <div class="eyeshoot-description">
+    <p>
+      Every photograph tells a unique story — a moment frozen in time,
+      ready to be cherished forever.
+    </p>
+     <a
+    href="https://www.facebook.com/EyeshotPhotography2016"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fb-btn"
+  >
+    <i class="fab fa-facebook-f"></i> Facebook
+  </a>
+  </div>
+</section>
+
+<!-- ===== EYESHOOT LIGHTBOX ===== -->
+<div id="eyeshootLightbox" class="lightbox">
+  <span class="close">&times;</span>
+
+  <img class="lightbox-img" src="" alt="Eyeshoot Preview">
+
+  <div class="lightbox-controls">
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+    <a id="downloadPhoto" download class="download-btn">Download</a>
+  </div>
+</div>
+
+
+
 
 <!-- ====== THE ENTOURAGE ====== -->
 <section id="entourage" class="entourage-section scroll-fade-in">
@@ -601,6 +645,8 @@
 
 <script src="../mp3autoplay.js"></script>
 <script src="../loading.js"></script>
+<script src="../photobooth47.js"></script>
+<script src="../photoboothview.js"></script>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
   import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
